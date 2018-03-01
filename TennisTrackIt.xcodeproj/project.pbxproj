@@ -23,6 +23,10 @@
 		D18BBFBA204842C700FCB60F /* Drills.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D18BBFB8204842C700FCB60F /* Drills.storyboard */; };
 		D18BBFBC2048437A00FCB60F /* More.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D18BBFBB2048437A00FCB60F /* More.storyboard */; };
 		D18BBFBD2048437A00FCB60F /* More.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D18BBFBB2048437A00FCB60F /* More.storyboard */; };
+		D18BBFBF2048466C00FCB60F /* GoalsCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18BBFBE2048466C00FCB60F /* GoalsCollectionVC.swift */; };
+		D18BBFC02048466C00FCB60F /* GoalsCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18BBFBE2048466C00FCB60F /* GoalsCollectionVC.swift */; };
+		D18BBFC32048471900FCB60F /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18BBFC22048471900FCB60F /* Logger.swift */; };
+		D18BBFC42048471900FCB60F /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18BBFC22048471900FCB60F /* Logger.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +41,8 @@
 		D18BBFB52048421100FCB60F /* Skills.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Skills.storyboard; sourceTree = "<group>"; };
 		D18BBFB8204842C700FCB60F /* Drills.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Drills.storyboard; sourceTree = "<group>"; };
 		D18BBFBB2048437A00FCB60F /* More.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = More.storyboard; sourceTree = "<group>"; };
+		D18BBFBE2048466C00FCB60F /* GoalsCollectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsCollectionVC.swift; sourceTree = "<group>"; };
+		D18BBFC22048471900FCB60F /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				D18BBFAD20483DE900FCB60F /* Modules */,
+				D18BBFC12048470C00FCB60F /* Utils */,
 				D18BBF8D20482CD800FCB60F /* AppDelegate.swift */,
 				D18BBF9120482CD800FCB60F /* Main.storyboard */,
 				D18BBF9420482CD800FCB60F /* Assets.xcassets */,
@@ -110,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				D18BBFB220483E2000FCB60F /* Goals.storyboard */,
+				D18BBFBE2048466C00FCB60F /* GoalsCollectionVC.swift */,
 			);
 			path = Goals;
 			sourceTree = "<group>";
@@ -128,6 +136,14 @@
 				D18BBFB52048421100FCB60F /* Skills.storyboard */,
 			);
 			path = Skills;
+			sourceTree = "<group>";
+		};
+		D18BBFC12048470C00FCB60F /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				D18BBFC22048471900FCB60F /* Logger.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -242,6 +258,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D18BBF8E20482CD800FCB60F /* AppDelegate.swift in Sources */,
+				D18BBFC32048471900FCB60F /* Logger.swift in Sources */,
+				D18BBFBF2048466C00FCB60F /* GoalsCollectionVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,6 +268,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D18BBFA220482D1D00FCB60F /* AppDelegate.swift in Sources */,
+				D18BBFC42048471900FCB60F /* Logger.swift in Sources */,
+				D18BBFC02048466C00FCB60F /* GoalsCollectionVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
