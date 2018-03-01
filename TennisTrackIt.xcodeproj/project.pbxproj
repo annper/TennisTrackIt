@@ -27,6 +27,8 @@
 		D18BBFC02048466C00FCB60F /* GoalsCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18BBFBE2048466C00FCB60F /* GoalsCollectionVC.swift */; };
 		D18BBFC32048471900FCB60F /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18BBFC22048471900FCB60F /* Logger.swift */; };
 		D18BBFC42048471900FCB60F /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18BBFC22048471900FCB60F /* Logger.swift */; };
+		D18BBFC620484F3F00FCB60F /* GoalsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18BBFC520484F3F00FCB60F /* GoalsCollectionViewCell.swift */; };
+		D18BBFC720484F3F00FCB60F /* GoalsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18BBFC520484F3F00FCB60F /* GoalsCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +45,7 @@
 		D18BBFBB2048437A00FCB60F /* More.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = More.storyboard; sourceTree = "<group>"; };
 		D18BBFBE2048466C00FCB60F /* GoalsCollectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsCollectionVC.swift; sourceTree = "<group>"; };
 		D18BBFC22048471900FCB60F /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		D18BBFC520484F3F00FCB60F /* GoalsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +121,7 @@
 			children = (
 				D18BBFB220483E2000FCB60F /* Goals.storyboard */,
 				D18BBFBE2048466C00FCB60F /* GoalsCollectionVC.swift */,
+				D18BBFC520484F3F00FCB60F /* GoalsCollectionViewCell.swift */,
 			);
 			path = Goals;
 			sourceTree = "<group>";
@@ -258,6 +262,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D18BBF8E20482CD800FCB60F /* AppDelegate.swift in Sources */,
+				D18BBFC620484F3F00FCB60F /* GoalsCollectionViewCell.swift in Sources */,
 				D18BBFC32048471900FCB60F /* Logger.swift in Sources */,
 				D18BBFBF2048466C00FCB60F /* GoalsCollectionVC.swift in Sources */,
 			);
@@ -268,6 +273,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D18BBFA220482D1D00FCB60F /* AppDelegate.swift in Sources */,
+				D18BBFC720484F3F00FCB60F /* GoalsCollectionViewCell.swift in Sources */,
 				D18BBFC42048471900FCB60F /* Logger.swift in Sources */,
 				D18BBFC02048466C00FCB60F /* GoalsCollectionVC.swift in Sources */,
 			);
