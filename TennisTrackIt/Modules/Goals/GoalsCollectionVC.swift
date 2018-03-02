@@ -13,6 +13,7 @@ class GoalsCollectionVC: UICollectionViewController {
   // MARK: - Private properties
   
   private let reuseIdentifier = "GoalCell"
+  private let goalDetailSegueIdentifier = "GoalDetailSegue"
   
   // MARK: - UIViewController
   
@@ -34,24 +35,52 @@ class GoalsCollectionVC: UICollectionViewController {
     Logger.warn("didReceiveMemoryWarning")
   }
   
+  // MARK: - Private methods
+  
   private func setupCollectionView() {
     
+    // Register nib for custom cell
     collectionView?.register(UINib.init(nibName: "GoalsCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: reuseIdentifier)
     
+    // Set estimated size to enable dynamic cell size
     if let flowLayout = collectionView?.collectionViewLayout as? UICollectionViewFlowLayout {
       flowLayout.estimatedItemSize = CGSize(width: 1, height: 1)
     }
   }
   
-  /*
-   // MARK: - Navigation
-   
-   // In a storyboard-based application, you will often want to do a little preparation before navigation
-   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-   // Get the new view controller using [segue destinationViewController].
-   // Pass the selected object to the new view controller.
-   }
-   */
+  private func getIndexPathForSelectedCell() -> IndexPath? {
+    
+    guard let selectedItems = collectionView?.indexPathsForSelectedItems, let indexPath = selectedItems.first else {
+      Logger.warn("No selected items found")
+      return nil
+    }
+    
+    return indexPath
+  }
+  
+  // MARK: - Navigation
+  
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    
+    Logger.info("Performing segue with identifier: \(segue.identifier ?? "")")
+    
+    switch segue.identifier! {
+      
+      // Prepare to show GoalDetailVC
+      case goalDetailSegueIdentifier:
+        
+        guard let goalDetailVC = segue.destination as? GoalDetailVC else {
+          Logger.warn("GoalDetailVC could not be loaded from segue")
+          return
+        }
+      
+      // TODO: - Prepare data
+      
+      default:
+        return
+    }
+    
+  }
   
   // MARK: UICollectionViewDataSource
   
@@ -78,6 +107,12 @@ class GoalsCollectionVC: UICollectionViewController {
     return cell
   }
   
-  
+  override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    
+    Logger.info("Item at indexPath \(indexPath) was selected")
+    
+    performSegue(withIdentifier: goalDetailSegueIdentifier, sender: self)
+    
+  }
   
 }

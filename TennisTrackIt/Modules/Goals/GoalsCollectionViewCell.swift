@@ -8,6 +8,9 @@
 
 import UIKit
 
+/*
+ * How to setup dynamic sized cells: https://medium.com/@wasinwiwongsak/uicollectionview-with-autosizing-cell-using-autolayout-in-ios-9-10-84ab5cdf35a2
+ */
 class GoalsCollectionViewCell: UICollectionViewCell {
   
   // MARK: - Private properties
@@ -27,7 +30,7 @@ class GoalsCollectionViewCell: UICollectionViewCell {
     containerViewWidthConstraint.constant = screenWidth - (edgeInsets)
   }}
   
-  // MARK - Public methods
+  // MARK: - UICollectionViewCell
   
   override func awakeFromNib() {
     super.awakeFromNib()
@@ -35,6 +38,8 @@ class GoalsCollectionViewCell: UICollectionViewCell {
     contentView.translatesAutoresizingMaskIntoConstraints = false
     layer.cornerRadius = 10
   }
+  
+  // MARK - Public methods
   
   func setupCell(withText text: String) {
     descLabel.text = text

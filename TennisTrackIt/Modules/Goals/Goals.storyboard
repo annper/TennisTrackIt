@@ -24,7 +24,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yyh-lG-GB3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-270" y="9"/>
+            <point key="canvasLocation" x="-714" y="9"/>
         </scene>
         <!--Goals-->
         <scene sceneID="JqZ-Od-vR7">
@@ -38,7 +38,7 @@
                             <size key="itemSize" width="374" height="193"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="0.0"/>
+                            <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="10"/>
                         </collectionViewFlowLayout>
                         <cells/>
                         <connections>
@@ -49,27 +49,27 @@
                     <navigationItem key="navigationItem" title="Goals" id="Yqx-n9-ljy"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <segue destination="Hpx-z3-S2w" kind="showDetail" identifier="GoalDetailSegue" id="LuS-X6-CPc"/>
+                        <segue destination="Hpx-z3-S2w" kind="show" identifier="GoalDetailSegue" id="MZr-Yi-cNe"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O4J-wB-hrr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="501.60000000000002" y="8.5457271364317844"/>
+            <point key="canvasLocation" x="-41" y="9"/>
         </scene>
-        <!--View Controller-->
+        <!--Goal DetailVC-->
         <scene sceneID="Jur-0A-xsh">
             <objects>
-                <viewController storyboardIdentifier="GoalDetail" id="Hpx-z3-S2w" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GoalDetail" id="Hpx-z3-S2w" customClass="GoalDetailVC" customModule="TennisTrackIt__Development_" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GTg-PT-Qs4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.80000000000000004" green="0.96078431369999995" blue="0.92156862750000001" alpha="1" colorSpace="calibratedRGB"/>
                         <viewLayoutGuide key="safeArea" id="ynJ-ai-FFK"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iqZ-MU-INO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1269" y="8"/>
+            <point key="canvasLocation" x="671" y="9"/>
         </scene>
     </scenes>
 </document>
