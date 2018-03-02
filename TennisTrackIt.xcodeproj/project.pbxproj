@@ -29,6 +29,8 @@
 		D18BBFC42048471900FCB60F /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18BBFC22048471900FCB60F /* Logger.swift */; };
 		D18BBFC620484F3F00FCB60F /* GoalsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18BBFC520484F3F00FCB60F /* GoalsCollectionViewCell.swift */; };
 		D18BBFC720484F3F00FCB60F /* GoalsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18BBFC520484F3F00FCB60F /* GoalsCollectionViewCell.swift */; };
+		D18BBFC920495F1C00FCB60F /* GoalsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D18BBFC820495F1C00FCB60F /* GoalsCollectionViewCell.xib */; };
+		D18BBFCA20495F1C00FCB60F /* GoalsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D18BBFC820495F1C00FCB60F /* GoalsCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +48,7 @@
 		D18BBFBE2048466C00FCB60F /* GoalsCollectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsCollectionVC.swift; sourceTree = "<group>"; };
 		D18BBFC22048471900FCB60F /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		D18BBFC520484F3F00FCB60F /* GoalsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsCollectionViewCell.swift; sourceTree = "<group>"; };
+		D18BBFC820495F1C00FCB60F /* GoalsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GoalsCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +125,7 @@
 				D18BBFB220483E2000FCB60F /* Goals.storyboard */,
 				D18BBFBE2048466C00FCB60F /* GoalsCollectionVC.swift */,
 				D18BBFC520484F3F00FCB60F /* GoalsCollectionViewCell.swift */,
+				D18BBFC820495F1C00FCB60F /* GoalsCollectionViewCell.xib */,
 			);
 			path = Goals;
 			sourceTree = "<group>";
@@ -231,6 +235,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D18BBFB62048421100FCB60F /* Skills.storyboard in Resources */,
+				D18BBFC920495F1C00FCB60F /* GoalsCollectionViewCell.xib in Resources */,
 				D18BBF9820482CD800FCB60F /* LaunchScreen.storyboard in Resources */,
 				D18BBFBC2048437A00FCB60F /* More.storyboard in Resources */,
 				D18BBFB320483E2000FCB60F /* Goals.storyboard in Resources */,
@@ -245,6 +250,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D18BBFB72048421100FCB60F /* Skills.storyboard in Resources */,
+				D18BBFCA20495F1C00FCB60F /* GoalsCollectionViewCell.xib in Resources */,
 				D18BBFA520482D1D00FCB60F /* LaunchScreen.storyboard in Resources */,
 				D18BBFBD2048437A00FCB60F /* More.storyboard in Resources */,
 				D18BBFB420483E2000FCB60F /* Goals.storyboard in Resources */,

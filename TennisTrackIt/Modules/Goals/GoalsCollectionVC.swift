@@ -19,8 +19,7 @@ class GoalsCollectionVC: UICollectionViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    // Register cell classes
-//    self.collectionView!.register(GoalsCollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)    
+    setupCollectionView()
   }
   
   override func viewDidAppear(_ animated: Bool) {
@@ -33,6 +32,15 @@ class GoalsCollectionVC: UICollectionViewController {
     super.didReceiveMemoryWarning()
 
     Logger.warn("didReceiveMemoryWarning")
+  }
+  
+  private func setupCollectionView() {
+    
+    collectionView?.register(UINib.init(nibName: "GoalsCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: reuseIdentifier)
+    
+    if let flowLayout = collectionView?.collectionViewLayout as? UICollectionViewFlowLayout {
+      flowLayout.estimatedItemSize = CGSize(width: 1, height: 1)
+    }
   }
   
   /*
@@ -51,7 +59,6 @@ class GoalsCollectionVC: UICollectionViewController {
     return 1
   }
   
-  
   override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
     return 2
   }
@@ -66,11 +73,11 @@ class GoalsCollectionVC: UICollectionViewController {
     }
     
     // Configure the cell
-    cell.setupCell()
+    cell.setupCell(withText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.")
     
     return cell
   }
   
-  // MARK: UICollectionViewDelegate
+  
   
 }
