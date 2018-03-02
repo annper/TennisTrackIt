@@ -7,6 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0497E0806BD8C6D716FEB8D0 /* Pods_TennisTrackIt__Development_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D81D9F9086275E8AEFFFC3A7 /* Pods_TennisTrackIt__Development_.framework */; };
+		2D379EE8D54930727770AA51 /* Pods_TennisTrackIt__Enterprise_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFF49D60F8FA7249A5EBEB36 /* Pods_TennisTrackIt__Enterprise_.framework */; };
+		D1025AE320499617007D55D8 /* Goal.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1025AE220499617007D55D8 /* Goal.swift */; };
+		D1025AE420499617007D55D8 /* Goal.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1025AE220499617007D55D8 /* Goal.swift */; };
+		D1025AE6204997C0007D55D8 /* Drill.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1025AE5204997C0007D55D8 /* Drill.swift */; };
+		D1025AE7204997C0007D55D8 /* Drill.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1025AE5204997C0007D55D8 /* Drill.swift */; };
+		D1025AE9204997EB007D55D8 /* Skill.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1025AE8204997EB007D55D8 /* Skill.swift */; };
+		D1025AEA204997EB007D55D8 /* Skill.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1025AE8204997EB007D55D8 /* Skill.swift */; };
+		D1025AEC20499818007D55D8 /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1025AEB20499818007D55D8 /* Tag.swift */; };
+		D1025AED20499818007D55D8 /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1025AEB20499818007D55D8 /* Tag.swift */; };
+		D1025AEF2049B427007D55D8 /* BaseDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1025AEE2049B427007D55D8 /* BaseDataManager.swift */; };
+		D1025AF02049B427007D55D8 /* BaseDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1025AEE2049B427007D55D8 /* BaseDataManager.swift */; };
+		D1025AF22049B474007D55D8 /* GoalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1025AF12049B474007D55D8 /* GoalDataManager.swift */; };
+		D1025AF32049B474007D55D8 /* GoalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1025AF12049B474007D55D8 /* GoalDataManager.swift */; };
 		D18BBF8E20482CD800FCB60F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18BBF8D20482CD800FCB60F /* AppDelegate.swift */; };
 		D18BBF9320482CD800FCB60F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D18BBF9120482CD800FCB60F /* Main.storyboard */; };
 		D18BBF9520482CD800FCB60F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D18BBF9420482CD800FCB60F /* Assets.xcassets */; };
@@ -36,6 +50,17 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		11201583402B2B17373C62D4 /* Pods-TennisTrackIt [Enterprise].release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TennisTrackIt [Enterprise].release.xcconfig"; path = "Pods/Target Support Files/Pods-TennisTrackIt [Enterprise]/Pods-TennisTrackIt [Enterprise].release.xcconfig"; sourceTree = "<group>"; };
+		8B19CEFE17F0322372A7D68F /* Pods-TennisTrackIt [Development].debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TennisTrackIt [Development].debug.xcconfig"; path = "Pods/Target Support Files/Pods-TennisTrackIt [Development]/Pods-TennisTrackIt [Development].debug.xcconfig"; sourceTree = "<group>"; };
+		9E001E16B248730AD567A3C6 /* Pods-TennisTrackIt [Enterprise].debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TennisTrackIt [Enterprise].debug.xcconfig"; path = "Pods/Target Support Files/Pods-TennisTrackIt [Enterprise]/Pods-TennisTrackIt [Enterprise].debug.xcconfig"; sourceTree = "<group>"; };
+		BFF49D60F8FA7249A5EBEB36 /* Pods_TennisTrackIt__Enterprise_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TennisTrackIt__Enterprise_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C3C89BD9D526CCB1AB8FC4FF /* Pods-TennisTrackIt [Development].release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TennisTrackIt [Development].release.xcconfig"; path = "Pods/Target Support Files/Pods-TennisTrackIt [Development]/Pods-TennisTrackIt [Development].release.xcconfig"; sourceTree = "<group>"; };
+		D1025AE220499617007D55D8 /* Goal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Goal.swift; sourceTree = "<group>"; };
+		D1025AE5204997C0007D55D8 /* Drill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drill.swift; sourceTree = "<group>"; };
+		D1025AE8204997EB007D55D8 /* Skill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Skill.swift; sourceTree = "<group>"; };
+		D1025AEB20499818007D55D8 /* Tag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
+		D1025AEE2049B427007D55D8 /* BaseDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseDataManager.swift; sourceTree = "<group>"; };
+		D1025AF12049B474007D55D8 /* GoalDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalDataManager.swift; sourceTree = "<group>"; };
 		D18BBF8A20482CD800FCB60F /* TennisTrackIt [Development].app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TennisTrackIt [Development].app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D18BBF8D20482CD800FCB60F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D18BBF9220482CD800FCB60F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -52,6 +77,7 @@
 		D18BBFC520484F3F00FCB60F /* GoalsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsCollectionViewCell.swift; sourceTree = "<group>"; };
 		D18BBFC820495F1C00FCB60F /* GoalsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GoalsCollectionViewCell.xib; sourceTree = "<group>"; };
 		D18BBFCC204967A700FCB60F /* GoalDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalDetailVC.swift; sourceTree = "<group>"; };
+		D81D9F9086275E8AEFFFC3A7 /* Pods_TennisTrackIt__Development_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TennisTrackIt__Development_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +85,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0497E0806BD8C6D716FEB8D0 /* Pods_TennisTrackIt__Development_.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,17 +93,42 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D379EE8D54930727770AA51 /* Pods_TennisTrackIt__Enterprise_.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C3C0401188DB1184987AF31D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8B19CEFE17F0322372A7D68F /* Pods-TennisTrackIt [Development].debug.xcconfig */,
+				C3C89BD9D526CCB1AB8FC4FF /* Pods-TennisTrackIt [Development].release.xcconfig */,
+				9E001E16B248730AD567A3C6 /* Pods-TennisTrackIt [Enterprise].debug.xcconfig */,
+				11201583402B2B17373C62D4 /* Pods-TennisTrackIt [Enterprise].release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		D1025AE120499603007D55D8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D1025AE220499617007D55D8 /* Goal.swift */,
+				D1025AE5204997C0007D55D8 /* Drill.swift */,
+				D1025AE8204997EB007D55D8 /* Skill.swift */,
+				D1025AEB20499818007D55D8 /* Tag.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		D18BBF8120482CD800FCB60F = {
 			isa = PBXGroup;
 			children = (
 				D18BBF8C20482CD800FCB60F /* TennisTrackIt */,
 				D18BBF8B20482CD800FCB60F /* Products */,
+				C3C0401188DB1184987AF31D /* Pods */,
+				F12CA0274E3087DE5C5F3577 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -170,8 +222,20 @@
 		D18BBFCF20496B5800FCB60F /* DataManagers */ = {
 			isa = PBXGroup;
 			children = (
+				D1025AE120499603007D55D8 /* Models */,
+				D1025AEE2049B427007D55D8 /* BaseDataManager.swift */,
+				D1025AF12049B474007D55D8 /* GoalDataManager.swift */,
 			);
 			path = DataManagers;
+			sourceTree = "<group>";
+		};
+		F12CA0274E3087DE5C5F3577 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D81D9F9086275E8AEFFFC3A7 /* Pods_TennisTrackIt__Development_.framework */,
+				BFF49D60F8FA7249A5EBEB36 /* Pods_TennisTrackIt__Enterprise_.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -181,9 +245,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D18BBF9C20482CD800FCB60F /* Build configuration list for PBXNativeTarget "TennisTrackIt [Development]" */;
 			buildPhases = (
+				186A2ECCC6739F0924618B51 /* [CP] Check Pods Manifest.lock */,
 				D18BBF8620482CD800FCB60F /* Sources */,
 				D18BBF8720482CD800FCB60F /* Frameworks */,
 				D18BBF8820482CD800FCB60F /* Resources */,
+				12A9F9530853AF93224AFDE0 /* [CP] Embed Pods Frameworks */,
+				F090384732FDCD05F74557D0 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -198,9 +265,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D18BBFA820482D1D00FCB60F /* Build configuration list for PBXNativeTarget "TennisTrackIt [Enterprise]" */;
 			buildPhases = (
+				092D4D9108E6919097828F03 /* [CP] Check Pods Manifest.lock */,
 				D18BBFA020482D1D00FCB60F /* Sources */,
 				D18BBFA320482D1D00FCB60F /* Frameworks */,
 				D18BBFA420482D1D00FCB60F /* Resources */,
+				80C28EA5D9A79A00112D20A5 /* [CP] Embed Pods Frameworks */,
+				F41953F6D999F7DE0812586B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -282,16 +352,131 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		092D4D9108E6919097828F03 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TennisTrackIt [Enterprise]-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		12A9F9530853AF93224AFDE0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-TennisTrackIt [Development]/Pods-TennisTrackIt [Development]-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TennisTrackIt [Development]/Pods-TennisTrackIt [Development]-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		186A2ECCC6739F0924618B51 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TennisTrackIt [Development]-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		80C28EA5D9A79A00112D20A5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-TennisTrackIt [Enterprise]/Pods-TennisTrackIt [Enterprise]-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TennisTrackIt [Enterprise]/Pods-TennisTrackIt [Enterprise]-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F090384732FDCD05F74557D0 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TennisTrackIt [Development]/Pods-TennisTrackIt [Development]-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F41953F6D999F7DE0812586B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TennisTrackIt [Enterprise]/Pods-TennisTrackIt [Enterprise]-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D18BBF8620482CD800FCB60F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D1025AF22049B474007D55D8 /* GoalDataManager.swift in Sources */,
+				D1025AEF2049B427007D55D8 /* BaseDataManager.swift in Sources */,
 				D18BBF8E20482CD800FCB60F /* AppDelegate.swift in Sources */,
 				D18BBFC620484F3F00FCB60F /* GoalsCollectionViewCell.swift in Sources */,
+				D1025AEC20499818007D55D8 /* Tag.swift in Sources */,
 				D18BBFC32048471900FCB60F /* Logger.swift in Sources */,
+				D1025AE9204997EB007D55D8 /* Skill.swift in Sources */,
 				D18BBFBF2048466C00FCB60F /* GoalsCollectionVC.swift in Sources */,
 				D18BBFCD204967A700FCB60F /* GoalDetailVC.swift in Sources */,
+				D1025AE6204997C0007D55D8 /* Drill.swift in Sources */,
+				D1025AE320499617007D55D8 /* Goal.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,11 +484,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D1025AF32049B474007D55D8 /* GoalDataManager.swift in Sources */,
+				D1025AF02049B427007D55D8 /* BaseDataManager.swift in Sources */,
 				D18BBFA220482D1D00FCB60F /* AppDelegate.swift in Sources */,
 				D18BBFC720484F3F00FCB60F /* GoalsCollectionViewCell.swift in Sources */,
+				D1025AED20499818007D55D8 /* Tag.swift in Sources */,
 				D18BBFC42048471900FCB60F /* Logger.swift in Sources */,
+				D1025AEA204997EB007D55D8 /* Skill.swift in Sources */,
 				D18BBFC02048466C00FCB60F /* GoalsCollectionVC.swift in Sources */,
 				D18BBFCE204967A700FCB60F /* GoalDetailVC.swift in Sources */,
+				D1025AE7204997C0007D55D8 /* Drill.swift in Sources */,
+				D1025AE420499617007D55D8 /* Goal.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -438,6 +629,7 @@
 		};
 		D18BBF9D20482CD800FCB60F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8B19CEFE17F0322372A7D68F /* Pods-TennisTrackIt [Development].debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -453,6 +645,7 @@
 		};
 		D18BBF9E20482CD800FCB60F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C3C89BD9D526CCB1AB8FC4FF /* Pods-TennisTrackIt [Development].release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -468,6 +661,7 @@
 		};
 		D18BBFA920482D1D00FCB60F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9E001E16B248730AD567A3C6 /* Pods-TennisTrackIt [Enterprise].debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -483,6 +677,7 @@
 		};
 		D18BBFAA20482D1D00FCB60F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 11201583402B2B17373C62D4 /* Pods-TennisTrackIt [Enterprise].release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
