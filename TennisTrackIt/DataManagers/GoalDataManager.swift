@@ -74,6 +74,7 @@ class GoalDataManager: BaseDataManager {
     deleteGoal(withId: goal.id)
   }
   
+  /// Delete goal with id
   public func deleteGoal(withId id: Int) {
     
     // Get all saved goals

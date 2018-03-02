@@ -12,8 +12,12 @@ class GoalsCollectionVC: UICollectionViewController {
   
   // MARK: - Private properties
   
+  private struct SegueIdentifier {
+    static let goalDetail = "GoalDetailSegue"
+    static let addGoal = "CreateGoalSegue"
+  }
+  
   private let reuseIdentifier = "GoalCell"
-  private let goalDetailSegueIdentifier = "GoalDetailSegue"
   
   // MARK: - UIViewController
   
@@ -62,12 +66,13 @@ class GoalsCollectionVC: UICollectionViewController {
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     
-    Logger.info("Performing segue with identifier: \(segue.identifier ?? "")")
+    let segueIdentifier = segue.identifier ?? ""
+    Logger.info("Performing segue with identifier: \(segueIdentifier)")
     
-    switch segue.identifier! {
+    switch segueIdentifier {
       
       // Prepare to show GoalDetailVC
-      case goalDetailSegueIdentifier:
+      case SegueIdentifier.goalDetail:
         
         guard let goalDetailVC = segue.destination as? GoalDetailVC else {
           Logger.warn("GoalDetailVC could not be loaded from segue")
@@ -75,6 +80,9 @@ class GoalsCollectionVC: UICollectionViewController {
         }
       
       // TODO: - Prepare data
+    case SegueIdentifier.addGoal:
+      break;
+//      guard let
       
       default:
         return
@@ -111,7 +119,7 @@ class GoalsCollectionVC: UICollectionViewController {
     
     Logger.info("Item at indexPath \(indexPath) was selected")
     
-    performSegue(withIdentifier: goalDetailSegueIdentifier, sender: self)
+    performSegue(withIdentifier: SegueIdentifier.goalDetail, sender: self)
     
   }
   
