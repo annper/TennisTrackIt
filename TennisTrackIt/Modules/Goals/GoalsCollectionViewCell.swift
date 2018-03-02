@@ -26,6 +26,13 @@ class GoalsCollectionViewCell: UICollectionViewCell {
   
   @IBOutlet var descLabel: UILabel!
   
+  @IBOutlet var containerView: UIView! { didSet {
+    containerView.layer.borderColor = UIColor.black.cgColor
+    containerView.layer.borderWidth = 2
+    containerView.layer.cornerRadius = 10
+    containerView.clipsToBounds = true
+  }}
+  
   @IBOutlet var containerViewWidthConstraint: NSLayoutConstraint! { didSet {
     containerViewWidthConstraint.constant = screenWidth - (edgeInsets)
   }}
@@ -36,7 +43,7 @@ class GoalsCollectionViewCell: UICollectionViewCell {
     super.awakeFromNib()
     
     contentView.translatesAutoresizingMaskIntoConstraints = false
-    layer.cornerRadius = 10
+//    layer.cornerRadius = 10
   }
   
   // MARK - Public methods

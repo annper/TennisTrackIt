@@ -99,6 +99,7 @@
             </constraints>
             <viewLayoutGuide key="safeArea" id="fqF-es-ONK"/>
             <connections>
+                <outlet property="containerView" destination="Mlk-wR-M0K" id="dSN-DL-7Di"/>
                 <outlet property="containerViewWidthConstraint" destination="owf-qx-qW2" id="Y4k-h5-Puu"/>
                 <outlet property="descLabel" destination="NDZ-oa-m5S" id="wYC-mS-lL7"/>
                 <outlet property="tagLabel" destination="YSk-uF-dmv" id="za6-lq-r6U"/>

@@ -12,6 +12,8 @@ class CreateGoalVC: UIViewController {
   
   // MARK: - IBOutlets
   
+  @IBOutlet var titleTextField: UITextField!
+  @IBOutlet var descTextView: UITextView!
   
   // MARK: - IBActions
   

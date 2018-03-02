@@ -122,6 +122,10 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="descTextView" destination="zRB-m9-dRr" id="7iv-Oe-3eN"/>
+                        <outlet property="titleTextField" destination="nOD-W9-V52" id="uRx-VJ-Bdg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MNf-GU-J4h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
