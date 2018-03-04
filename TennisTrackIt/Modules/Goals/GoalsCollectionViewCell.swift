@@ -43,7 +43,6 @@ class GoalsCollectionViewCell: UICollectionViewCell {
     super.awakeFromNib()
     
     contentView.translatesAutoresizingMaskIntoConstraints = false
-//    layer.cornerRadius = 10
   }
   
   // MARK - Public methods

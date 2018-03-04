@@ -38,12 +38,23 @@ class GoalDataManager: BaseDataManager {
     
     // Get the saved GoalList if there is one
     var goalList = GoalList()
+    var id = 1
     
     if let savedList = savedGoals() {
       goalList = savedList
+      
+      // Sort after id lowest to highest
+//      let sortedGoals = goalList.goals.sorted { $0.id < $1.id }
+//
+//      // increment the last id with
+//      id = sortedGoals.last!.id + 1
+      
+      // Set a unique id by finding the highest current id and increment by one
+      id = (goalList.goals.map({ $0.id }).max() ?? 1) + 1
     }
     
     // Append the new goal to the list of existing ones
+    goal.id = id
     goalList.goals.append(goal)
     
     // Convert GoalList object into a string

@@ -116,14 +116,16 @@
                                 <action selector="didTapCancelBarButtonItem:" destination="Gc7-Ny-w0S" id="Rka-KK-yl5"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="aqo-zd-T6i">
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" systemItem="done" id="aqo-zd-T6i">
                             <connections>
                                 <action selector="didTapDoneBarButtonItem:" destination="Gc7-Ny-w0S" id="fFs-v9-5iz"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="cancelBarButtonItem" destination="c8r-7O-wPl" id="lJ1-BV-ogB"/>
                         <outlet property="descTextView" destination="zRB-m9-dRr" id="7iv-Oe-3eN"/>
+                        <outlet property="doneBarButtonItem" destination="aqo-zd-T6i" id="Zjh-Iv-gMw"/>
                         <outlet property="titleTextField" destination="nOD-W9-V52" id="uRx-VJ-Bdg"/>
                     </connections>
                 </viewController>
