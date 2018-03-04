@@ -27,7 +27,7 @@ class GoalsCollectionViewCell: UICollectionViewCell {
   @IBOutlet var descLabel: UILabel!
   
   @IBOutlet var containerView: UIView! { didSet {
-    containerView.layer.borderColor = UIColor.black.cgColor
+    containerView.layer.borderColor = UIColor(red: 0.298, green: 0.298, blue: 0.298, alpha: 1).cgColor
     containerView.layer.borderWidth = 2
     containerView.layer.cornerRadius = 10
     containerView.clipsToBounds = true

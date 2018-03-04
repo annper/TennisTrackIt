@@ -10,8 +10,18 @@ import UIKit
 
 class GoalDetailVC: UIViewController {
   
+  private var goal: Goal!
+  
+  @IBOutlet var descTextView: UITextView! { didSet {
+    descTextView.layer.cornerRadius = 5
+  }}
+  
+  @IBOutlet var createdLabel: UILabel!
+  
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+//    navigationController?.navigationItem.title = goal.title
    
     Logger.info("GoalDetailVC")
   }

@@ -38,6 +38,7 @@ class GoalList: Mappable {
 class Goal: Mappable {
   
   public var id: Int = 0
+  public var createdDate: Date = Date()
   public var title: String = ""
   public var tags: [Tag] = []
   public var description: String?
@@ -50,6 +51,7 @@ class Goal: Mappable {
   
   public func mapping(map: Map) {
     id <- map["id"]
+    createdDate <- (map["createdDate"], DateTransform())
     title <- map["title"]
     tags <- map["tags"]
     description <- map["description"]

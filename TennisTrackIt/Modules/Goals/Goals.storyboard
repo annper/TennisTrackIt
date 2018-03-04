@@ -12,6 +12,7 @@
     <customFonts key="customFonts">
         <array key="HelveticaNeue.ttc">
             <string>HelveticaNeue</string>
+            <string>HelveticaNeue-Italic</string>
         </array>
     </customFonts>
     <scenes>
@@ -133,16 +134,45 @@
             </objects>
             <point key="canvasLocation" x="669.60000000000002" y="796.55172413793105"/>
         </scene>
-        <!--Goal DetailVC-->
+        <!--Goal title-->
         <scene sceneID="Jur-0A-xsh">
             <objects>
-                <viewController storyboardIdentifier="GoalDetail" id="Hpx-z3-S2w" customClass="GoalDetailVC" customModule="TennisTrackIt__Development_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GoalDetail" title="Goal title" id="Hpx-z3-S2w" customClass="GoalDetailVC" customModule="TennisTrackIt__Development_" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GTg-PT-Qs4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.80000000000000004" green="0.96078431369999995" blue="0.92156862750000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Description" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G4z-wL-by9">
+                                <rect key="frame" x="20" y="20" width="335" height="200"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="csF-je-Bew"/>
+                                </constraints>
+                                <color key="textColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Created: 04-03-2018" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7k5-hd-evq">
+                                <rect key="frame" x="20" y="240" width="140" height="18"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Italic" family="Helvetica Neue" pointSize="15"/>
+                                <color key="textColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="7k5-hd-evq" firstAttribute="leading" secondItem="ynJ-ai-FFK" secondAttribute="leading" constant="20" id="7qU-Z6-7xS"/>
+                            <constraint firstItem="ynJ-ai-FFK" firstAttribute="trailing" secondItem="G4z-wL-by9" secondAttribute="trailing" constant="20" id="Vlt-t0-yij"/>
+                            <constraint firstItem="G4z-wL-by9" firstAttribute="leading" secondItem="ynJ-ai-FFK" secondAttribute="leading" constant="20" id="Yh4-tY-37X"/>
+                            <constraint firstItem="G4z-wL-by9" firstAttribute="top" secondItem="ynJ-ai-FFK" secondAttribute="top" constant="20" id="Zjn-sz-s4v"/>
+                            <constraint firstItem="7k5-hd-evq" firstAttribute="top" secondItem="G4z-wL-by9" secondAttribute="bottom" constant="20" id="upB-RK-BA2"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="ynJ-ai-FFK"/>
                     </view>
+                    <connections>
+                        <outlet property="createdLabel" destination="7k5-hd-evq" id="NyZ-ug-q0D"/>
+                        <outlet property="descTextView" destination="G4z-wL-by9" id="Nax-M5-YLY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iqZ-MU-INO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
