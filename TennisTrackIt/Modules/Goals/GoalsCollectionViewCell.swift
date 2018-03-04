@@ -47,8 +47,9 @@ class GoalsCollectionViewCell: UICollectionViewCell {
   
   // MARK - Public methods
   
-  func setupCell(withText text: String) {
-    descLabel.text = text
+  func setupCell(withGoal goal: Goal) {
+    titleLabel.text = goal.title
+    descLabel.text = goal.description ?? ""
   }
   
 }

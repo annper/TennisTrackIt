@@ -12,17 +12,22 @@ class GoalsCollectionVC: UICollectionViewController {
   
   // MARK: - Private properties
   
+  private let goalDataManager = GoalDataManager()
+  
   private struct SegueIdentifier {
     static let goalDetail = "GoalDetailSegue"
     static let addGoal = "CreateGoalSegue"
   }
   
   private let reuseIdentifier = "GoalCell"
+  private var allGoals = [Goal]()
   
   // MARK: - UIViewController
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    loadSavedGoals()
     
     setupCollectionView()
   }
@@ -41,6 +46,17 @@ class GoalsCollectionVC: UICollectionViewController {
   
   // MARK: - Private methods
   
+  private func loadSavedGoals() {
+    
+    guard let savedGoals = goalDataManager.savedGoals() else {
+      return
+    }
+    
+    // Sort goals to show newest goal at the top
+    let sortedGoals = savedGoals.goals.sorted { $0.id > $1.id }
+    allGoals = sortedGoals
+  }
+  
   private func setupCollectionView() {
     
     // Register nib for custom cell
@@ -52,6 +68,7 @@ class GoalsCollectionVC: UICollectionViewController {
     }
   }
   
+  // Current not being used anywhere - can probbaly remove this
   private func getIndexPathForSelectedCell() -> IndexPath? {
     
     guard let selectedItems = collectionView?.indexPathsForSelectedItems, let indexPath = selectedItems.first else {
@@ -97,7 +114,7 @@ class GoalsCollectionVC: UICollectionViewController {
   }
   
   override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    return 2
+    return allGoals.count
   }
   
   override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -110,7 +127,8 @@ class GoalsCollectionVC: UICollectionViewController {
     }
     
     // Configure the cell
-    cell.setupCell(withText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.")
+    let goal = allGoals[indexPath.row]
+    cell.setupCell(withGoal: goal)
     
     return cell
   }

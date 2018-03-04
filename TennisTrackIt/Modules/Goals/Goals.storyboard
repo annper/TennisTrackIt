@@ -111,7 +111,7 @@
                         <viewLayoutGuide key="safeArea" id="KGt-t1-oz4"/>
                     </view>
                     <navigationItem key="navigationItem" title="Create goal" id="bJi-Yf-hl0">
-                        <barButtonItem key="leftBarButtonItem" style="plain" systemItem="cancel" id="c8r-7O-wPl">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="c8r-7O-wPl">
                             <connections>
                                 <action selector="didTapCancelBarButtonItem:" destination="Gc7-Ny-w0S" id="Rka-KK-yl5"/>
                             </connections>
