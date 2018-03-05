@@ -15,8 +15,12 @@ class GoalsCollectionViewCell: UICollectionViewCell {
   
   // MARK: - Private properties
   
-  let screenWidth: CGFloat = UIScreen.main.bounds.width
-  let edgeInsets: CGFloat = 10 * 2 // Left and right edge insets set in the Collection View
+  private var goal: Goal!
+  private var indexPath: IndexPath!
+  private var removeGoal: ((_ goal: Goal, _ indexPath: IndexPath) -> Void)!
+  
+  private let screenWidth: CGFloat = UIScreen.main.bounds.width
+  private let edgeInsets: CGFloat = 10 * 2 // Left and right edge insets set in the Collection View
   
   // MARK: - IBOutlets
   
@@ -37,6 +41,11 @@ class GoalsCollectionViewCell: UICollectionViewCell {
     containerViewWidthConstraint.constant = screenWidth - (edgeInsets)
   }}
   
+  @IBAction func didTapRemoveButton(_ sender: UIButton) {
+    Logger.info("Remove goal with id: \(goal.id)")
+    deleteGoal()
+  }
+  
   // MARK: - UICollectionViewCell
   
   override func awakeFromNib() {
@@ -47,9 +56,27 @@ class GoalsCollectionViewCell: UICollectionViewCell {
   
   // MARK - Public methods
   
-  func setupCell(withGoal goal: Goal) {
-    titleLabel.text = goal.title
-    descLabel.text = goal.description ?? ""
+  func setupCell(withCellItem item: GoalCellItem) {
+    self.goal = item.goal
+    self.indexPath = item.indexPath
+    self.removeGoal = item.removeGoalAction
+    
+    titleLabel.text = item.goal.title
+    descLabel.text = item.goal.description
   }
   
+  // MARK: - Private methods
+  
+  private func deleteGoal() {
+    removeGoal(goal, indexPath)
+  }
+  
+}
+
+// MARK: - GoalCellItem
+
+struct GoalCellItem {
+  var indexPath: IndexPath
+  var goal: Goal
+  var removeGoalAction: ((_ goal: Goal, _ indexPath: IndexPath) -> Void)
 }

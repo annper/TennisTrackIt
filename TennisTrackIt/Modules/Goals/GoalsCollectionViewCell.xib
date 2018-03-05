@@ -40,11 +40,20 @@
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cIE-ff-dgZ">
+                                        <rect key="frame" x="356" y="8" width="24" height="24"/>
+                                        <state key="normal" image="clear"/>
+                                        <connections>
+                                            <action selector="didTapRemoveButton:" destination="pcf-kt-hxe" eventType="touchUpInside" id="oyB-by-fD6"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.34901960780000002" blue="0.34901960780000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstItem="cIE-ff-dgZ" firstAttribute="centerY" secondItem="Arn-Za-WdA" secondAttribute="centerY" id="1OV-2O-AtR"/>
                                     <constraint firstItem="yqM-m8-bHY" firstAttribute="leading" secondItem="Arn-Za-WdA" secondAttribute="leading" constant="20" id="2ig-3Q-hdQ"/>
                                     <constraint firstAttribute="height" constant="40" id="4OB-po-9Xh"/>
+                                    <constraint firstAttribute="trailing" secondItem="cIE-ff-dgZ" secondAttribute="trailing" constant="20" id="iOK-2p-O2F"/>
                                     <constraint firstItem="yqM-m8-bHY" firstAttribute="centerY" secondItem="Arn-Za-WdA" secondAttribute="centerY" id="wza-FO-5RM"/>
                                 </constraints>
                             </view>
@@ -108,4 +117,7 @@
             <point key="canvasLocation" x="20" y="-72"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="clear" width="24" height="24"/>
+    </resources>
 </document>

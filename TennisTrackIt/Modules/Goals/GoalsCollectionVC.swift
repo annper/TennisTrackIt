@@ -35,6 +35,8 @@ class GoalsCollectionVC: UICollectionViewController {
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
     
+    refreshGoalList()
+    
     Logger.info("Goals tab")
   }
   
@@ -45,17 +47,6 @@ class GoalsCollectionVC: UICollectionViewController {
   }
   
   // MARK: - Private methods
-  
-  private func loadSavedGoals() {
-    
-    guard let savedGoals = goalDataManager.savedGoals() else {
-      return
-    }
-    
-    // Sort goals to show newest goal at the top
-    let sortedGoals = savedGoals.goals.sorted { $0.id > $1.id }
-    allGoals = sortedGoals
-  }
   
   private func setupCollectionView() {
     
@@ -68,15 +59,26 @@ class GoalsCollectionVC: UICollectionViewController {
     }
   }
   
-  // Current not being used anywhere - can probbaly remove this
-  private func getIndexPathForSelectedCell() -> IndexPath? {
+  private func loadSavedGoals() {
     
-    guard let selectedItems = collectionView?.indexPathsForSelectedItems, let indexPath = selectedItems.first else {
-      Logger.warn("No selected items found")
-      return nil
+    guard let savedGoals = goalDataManager.savedGoals() else {
+      return
     }
     
-    return indexPath
+    // Sort goals to show newest goal at the top
+    let sortedGoals = savedGoals.goals.sorted { $0.id > $1.id }
+    allGoals = sortedGoals
+  }
+  
+  private func removeGoal(_ goal: Goal, atIndexPath indexPath: IndexPath) {
+    goalDataManager.delete(goal)
+    loadSavedGoals()
+    collectionView?.deleteItems(at: [indexPath])
+  }
+  
+  private func refreshGoalList() {
+    loadSavedGoals()
+    collectionView?.reloadData()
   }
   
   // MARK: - Navigation
@@ -128,7 +130,8 @@ class GoalsCollectionVC: UICollectionViewController {
     
     // Configure the cell
     let goal = allGoals[indexPath.row]
-    cell.setupCell(withGoal: goal)
+    let goalCellItem = GoalCellItem(indexPath: indexPath, goal: goal, removeGoalAction: removeGoal(_:atIndexPath:))
+    cell.setupCell(withCellItem: goalCellItem)
     
     return cell
   }

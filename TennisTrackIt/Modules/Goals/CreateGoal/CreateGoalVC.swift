@@ -63,6 +63,7 @@ class CreateGoalVC: UIViewController, UITextFieldDelegate, UITextViewDelegate {
   
   // MARK: - Private methods
   
+  /// Create goal from users filled in information
   private func createGoal() -> Goal {
     let goal = Goal()
     
