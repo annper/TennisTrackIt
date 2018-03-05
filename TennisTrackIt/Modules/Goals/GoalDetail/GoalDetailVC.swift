@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GoalDetailVC: UIViewController {
+class GoalDetailVC: UIViewController, UITextViewDelegate {
   
   // MARK: - Public properties
   
@@ -38,6 +38,7 @@ class GoalDetailVC: UIViewController {
   }}
   
   @IBOutlet var descTextView: UITextView! { didSet {
+    descTextView.delegate = self
     descTextView.layer.cornerRadius = 5
     descTextView.textContainerInset = UIEdgeInsets(top: 10, left: 15, bottom: 10, right: 15)
     descTextView.text = goal.description
@@ -58,6 +59,12 @@ class GoalDetailVC: UIViewController {
     configProgressButtonDisplay()
   }
   
+  @IBAction func didTapEditBarButtonItem(_ sender: UIBarButtonItem) {
+    
+    // Start or stop editing
+    configRightBarButtonItem()
+  }
+  
   // MARK: - UIViewController
   
   override func viewDidLoad() {
@@ -65,7 +72,7 @@ class GoalDetailVC: UIViewController {
     
     // Set nav bar title
     title = goal.title
-    resizeTextView(descTextView)
+    resizeTextViewToFitContent(descTextView)
       
     Logger.info("GoalDetailVC")
   }
@@ -98,29 +105,34 @@ class GoalDetailVC: UIViewController {
     progressButton.setTitle(title, for: .normal)
   }
   
-  private func resizeTextView(_ textView: UITextView) {
+  private func configRightBarButtonItem() {
+    let shouldStartEditing = !descTextView.isEditable
+    
+    if shouldStartEditing {
+      descTextView.isEditable = true
+      descTextView.becomeFirstResponder()
+      
+      // Update bar button to say 'Done'
+      navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(didTapEditBarButtonItem(_:)))
+    } else {
+      descTextView.isEditable = false
+      descTextView.resignFirstResponder()
+      
+      // Update bar button to say 'Edit'
+      navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(didTapEditBarButtonItem(_:)))
+    }
+    
+  }
+  
+  private func resizeTextViewToFitContent(_ textView: UITextView) {
     let newHeight = textView.sizeThatFits(CGSize(width: textView.frame.size.width, height: CGFloat.greatestFiniteMagnitude)).height
     
     if textView.constraints.contains(descTextViewHeightConstraint) {
       descTextViewHeightConstraint.constant = newHeight
     }
+    
+    view.layoutIfNeeded()
   }
-  
-//  private func resize(textView: UITextView) {
-//
-//    if let text = textView.text, text.length > 0 {
-//
-//      let newHeight = textView.sizeThatFits(CGSize(width: textView.frame.size.width, height: CGFloat.greatestFiniteMagnitude)).height
-//
-//      if true == textView.constraints.contains(descTextViewHeightConstraint) {
-//        descTextViewHeightConstraint.constant = newHeight > descTextViewHeightConstraint.constant ? newHeight : descTextViewHeightConstraint.constant
-//      } else {
-//        tagsTextViewHeightConstraint.constant = newHeight >                 tagsTextViewHeightConstraint.constant ? newHeight : tagsTextViewHeightConstraint.constant
-//      }
-//    }
-//
-//    view.layoutIfNeeded()
-//  }
   
   /*
    // MARK: - Navigation
@@ -131,5 +143,14 @@ class GoalDetailVC: UIViewController {
    // Pass the selected object to the new view controller.
    }
    */
+  
+  // MARK: - UITextViewDelegate
+  
+  func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+    
+    resizeTextViewToFitContent(descTextView)
+    
+    return true
+  }
   
 }

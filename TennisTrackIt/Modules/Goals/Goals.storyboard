@@ -262,6 +262,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ynJ-ai-FFK"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Goal title" id="wHn-81-AaK">
+                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="aiv-h9-7UH">
+                            <connections>
+                                <action selector="didTapEditBarButtonItem:" destination="Hpx-z3-S2w" id="8Qy-jr-81h"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="createdLabel" destination="lki-1w-p7r" id="mZ8-d3-0lf"/>
                         <outlet property="descTextView" destination="cGc-TL-Xi8" id="TmZ-Hl-b3I"/>
