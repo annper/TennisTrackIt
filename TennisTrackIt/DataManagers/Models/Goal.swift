@@ -60,6 +60,7 @@ class Goal: Mappable {
   public var title: String = ""
   public var tags: [Tag] = []
   public var description: String?
+  public var completed: Bool = false
   
   // MARK: - Mappable
   
@@ -73,6 +74,7 @@ class Goal: Mappable {
     title <- map["title"]
     tags <- map["tags"]
     description <- map["description"]
+    completed <- map["completed"]
   }
   
 }

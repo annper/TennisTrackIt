@@ -31,19 +31,23 @@ class GoalsCollectionVC: UICollectionViewController {
   // MARK: - IBActions
   
   @IBAction func didTapSettingsBarButtonItem(_ sender: UIBarButtonItem) {
-    let alert = UIAlertController(title: "Order goal", message: nil, preferredStyle: .actionSheet)
+    let alert = UIAlertController(title: "Order goals", message: "Set the order in which you wish the goals to be displayed", preferredStyle: .actionSheet)
     
     // Sort alphabetically
-    let alphabetic = UIAlertAction(title: "Alphabetic", style: .default) { (_) in
+    let alphabetic = UIAlertAction(title: "Alphabetically", style: .default) { (_) in
       self.updateSortSetting(to: .alphabetic)
     }
     alert.addAction(alphabetic)
     
     // Sort with last created at the top
-    let createdDate = UIAlertAction(title: "Created by", style: .default) { (_) in
+    let createdDate = UIAlertAction(title: "In order of creation date", style: .default) { (_) in
       self.updateSortSetting(to: .createdDate)
     }
     alert.addAction(createdDate)
+    
+    // Cancel
+    let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+    alert.addAction(cancel)
     
     present(alert, animated: true, completion: nil)
   }
@@ -84,10 +88,6 @@ class GoalsCollectionVC: UICollectionViewController {
       flowLayout.estimatedItemSize = CGSize(width: 1, height: 1)
     }
   }
-  
-//  private func indexPathForSelectedItem() -> IndexPath? {
-//    return collectionView?.indexPathsForSelectedItems?.first
-//  }
   
   private func loadSavedGoals() {
     
