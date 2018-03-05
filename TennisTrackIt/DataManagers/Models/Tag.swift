@@ -12,11 +12,7 @@ import ObjectMapper
 class Tag: Mappable {
   
   public var id: Int = 0
-  public var type: TagType = .goal { didSet {
-    rawType = type.rawValue
-  }}
-  
-  private var rawType: String = "goal"
+  public var type: TagType = .goal
   
   // MARK: - Mappable
   
@@ -25,7 +21,7 @@ class Tag: Mappable {
   }
   
   public func mapping(map: Map) {
-    rawType <- map["rawType"]
+    type <- (map["type"], EnumTransform<TagType>())
     id <- map["id"]
   }
   
