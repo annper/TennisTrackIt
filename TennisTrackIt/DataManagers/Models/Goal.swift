@@ -49,6 +49,20 @@ class GoalList: Mappable {
 enum SortType: String {
   case alphabetic = "alphabetic"
   case createdDate = "createdDate"
+  
+  func sortDescriptor(_ type: SortType) -> String {
+    let selected: String = "✔︎"
+    let title: String
+    
+    switch type {
+    case .alphabetic:
+      title = "Alphabetically"
+    case .createdDate:
+      title = "Last edited"
+    }
+    
+    return type == self ? "\(title) \(selected)" : title
+  }
 }
 
 // MARK: - Goal

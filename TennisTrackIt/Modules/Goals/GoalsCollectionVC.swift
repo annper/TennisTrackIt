@@ -21,6 +21,7 @@ class GoalsCollectionVC: UICollectionViewController {
   
   private let reuseIdentifier = "GoalCell"
   private var allGoals = [Goal]()
+  private var activeSortType: SortType = .createdDate
   
   // MARK: - IBOutlets
   
@@ -34,13 +35,13 @@ class GoalsCollectionVC: UICollectionViewController {
     let alert = UIAlertController(title: "Order goals", message: "Set the order in which you wish the goals to be displayed", preferredStyle: .actionSheet)
     
     // Sort alphabetically
-    let alphabetic = UIAlertAction(title: "Alphabetically", style: .default) { (_) in
+    let alphabetic = UIAlertAction(title: activeSortType.sortDescriptor(.alphabetic), style: .default) { (_) in
       self.updateSortSetting(to: .alphabetic)
     }
     alert.addAction(alphabetic)
     
     // Sort with last created at the top
-    let createdDate = UIAlertAction(title: "In order of creation date", style: .default) { (_) in
+    let createdDate = UIAlertAction(title: activeSortType.sortDescriptor(.createdDate), style: .default) { (_) in
       self.updateSortSetting(to: .createdDate)
     }
     alert.addAction(createdDate)
@@ -96,6 +97,7 @@ class GoalsCollectionVC: UICollectionViewController {
     }
 
     let sorted = savedGoals.sortedGoals()
+    activeSortType = savedGoals.sortType
     allGoals = sorted
   }
   

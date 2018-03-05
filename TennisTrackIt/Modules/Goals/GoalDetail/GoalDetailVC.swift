@@ -39,8 +39,11 @@ class GoalDetailVC: UIViewController {
   
   @IBOutlet var descTextView: UITextView! { didSet {
     descTextView.layer.cornerRadius = 5
+    descTextView.textContainerInset = UIEdgeInsets(top: 10, left: 15, bottom: 10, right: 15)
     descTextView.text = goal.description
   }}
+  
+  @IBOutlet var descTextViewHeightConstraint: NSLayoutConstraint!
   
   @IBOutlet var createdLabel: UILabel! { didSet {
     createdLabel.text = "Created: \(dateFormatter.string(from: goal.createdDate))"
@@ -62,6 +65,7 @@ class GoalDetailVC: UIViewController {
     
     // Set nav bar title
     title = goal.title
+    resizeTextView(descTextView)
       
     Logger.info("GoalDetailVC")
   }
@@ -94,6 +98,29 @@ class GoalDetailVC: UIViewController {
     progressButton.setTitle(title, for: .normal)
   }
   
+  private func resizeTextView(_ textView: UITextView) {
+    let newHeight = textView.sizeThatFits(CGSize(width: textView.frame.size.width, height: CGFloat.greatestFiniteMagnitude)).height
+    
+    if textView.constraints.contains(descTextViewHeightConstraint) {
+      descTextViewHeightConstraint.constant = newHeight
+    }
+  }
+  
+//  private func resize(textView: UITextView) {
+//
+//    if let text = textView.text, text.length > 0 {
+//
+//      let newHeight = textView.sizeThatFits(CGSize(width: textView.frame.size.width, height: CGFloat.greatestFiniteMagnitude)).height
+//
+//      if true == textView.constraints.contains(descTextViewHeightConstraint) {
+//        descTextViewHeightConstraint.constant = newHeight > descTextViewHeightConstraint.constant ? newHeight : descTextViewHeightConstraint.constant
+//      } else {
+//        tagsTextViewHeightConstraint.constant = newHeight >                 tagsTextViewHeightConstraint.constant ? newHeight : tagsTextViewHeightConstraint.constant
+//      }
+//    }
+//
+//    view.layoutIfNeeded()
+//  }
   
   /*
    // MARK: - Navigation

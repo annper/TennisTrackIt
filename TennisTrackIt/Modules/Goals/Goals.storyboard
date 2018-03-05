@@ -151,7 +151,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="534"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5sN-kl-uNY">
-                                        <rect key="frame" x="5" y="5" width="365" height="40"/>
+                                        <rect key="frame" x="2.5" y="3" width="370" height="40"/>
                                         <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="5dV-cU-guJ"/>
@@ -165,7 +165,7 @@
                                         </connections>
                                     </button>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cGc-TL-Xi8">
-                                        <rect key="frame" x="20" y="65" width="335" height="200"/>
+                                        <rect key="frame" x="20" y="63" width="335" height="200"/>
                                         <color key="backgroundColor" red="0.55000000000000004" green="0.85999999999999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="200" id="wKG-ib-8de"/>
@@ -173,8 +173,8 @@
                                         <attributedString key="attributedText">
                                             <fragment content="Description">
                                                 <attributes>
-                                                    <color key="NSColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <font key="NSFont" size="17" name="HelveticaNeue"/>
+                                                    <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <font key="NSFont" size="17" name="HelveticaNeue-Medium"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="1.5" tighteningFactorForTruncation="0.0"/>
                                                 </attributes>
                                             </fragment>
@@ -182,10 +182,10 @@
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FI3-ex-2a6">
-                                        <rect key="frame" x="0.0" y="285" width="375" height="50"/>
+                                        <rect key="frame" x="0.0" y="283" width="375" height="50"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Related skills" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0mS-Yb-d41">
-                                                <rect key="frame" x="137" y="15" width="100.5" height="20"/>
+                                                <rect key="frame" x="137.5" y="15" width="100.5" height="20"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                 <color key="textColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -199,10 +199,10 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eSY-1v-1ps">
-                                        <rect key="frame" x="0.0" y="355" width="375" height="50"/>
+                                        <rect key="frame" x="0.0" y="353" width="375" height="50"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Related drills" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bnn-jV-1EQ">
-                                                <rect key="frame" x="138" y="15" width="99" height="20"/>
+                                                <rect key="frame" x="138.5" y="15" width="99" height="20"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                 <color key="textColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -219,16 +219,16 @@
                                 <constraints>
                                     <constraint firstItem="cGc-TL-Xi8" firstAttribute="top" secondItem="5sN-kl-uNY" secondAttribute="bottom" constant="20" id="0Ng-oJ-0FO"/>
                                     <constraint firstAttribute="trailing" secondItem="eSY-1v-1ps" secondAttribute="trailing" id="5e8-r1-8kb"/>
-                                    <constraint firstItem="5sN-kl-uNY" firstAttribute="top" secondItem="9uD-LF-8gr" secondAttribute="top" constant="5" id="5k4-A3-TAK"/>
+                                    <constraint firstItem="5sN-kl-uNY" firstAttribute="top" secondItem="9uD-LF-8gr" secondAttribute="top" constant="3" id="5k4-A3-TAK"/>
                                     <constraint firstItem="FI3-ex-2a6" firstAttribute="leading" secondItem="9uD-LF-8gr" secondAttribute="leading" id="6tv-2d-G9J"/>
-                                    <constraint firstItem="5sN-kl-uNY" firstAttribute="leading" secondItem="9uD-LF-8gr" secondAttribute="leading" constant="5" id="9PH-UP-PoJ"/>
+                                    <constraint firstItem="5sN-kl-uNY" firstAttribute="leading" secondItem="9uD-LF-8gr" secondAttribute="leading" constant="2.5" id="9PH-UP-PoJ"/>
                                     <constraint firstAttribute="trailing" secondItem="cGc-TL-Xi8" secondAttribute="trailing" constant="20" id="Elq-cl-vNi"/>
                                     <constraint firstItem="eSY-1v-1ps" firstAttribute="top" secondItem="FI3-ex-2a6" secondAttribute="bottom" constant="20" id="JF8-xi-AEa"/>
                                     <constraint firstItem="5sN-kl-uNY" firstAttribute="centerX" secondItem="9uD-LF-8gr" secondAttribute="centerX" id="RBo-7b-TcB"/>
                                     <constraint firstItem="eSY-1v-1ps" firstAttribute="leading" secondItem="9uD-LF-8gr" secondAttribute="leading" id="acX-es-25j"/>
                                     <constraint firstItem="cGc-TL-Xi8" firstAttribute="leading" secondItem="9uD-LF-8gr" secondAttribute="leading" constant="20" id="d3L-qg-LcR"/>
                                     <constraint firstItem="FI3-ex-2a6" firstAttribute="top" secondItem="cGc-TL-Xi8" secondAttribute="bottom" constant="20" id="dux-qZ-07g"/>
-                                    <constraint firstAttribute="trailing" secondItem="5sN-kl-uNY" secondAttribute="trailing" constant="5" id="hXa-2V-sxo"/>
+                                    <constraint firstAttribute="trailing" secondItem="5sN-kl-uNY" secondAttribute="trailing" constant="2.5" id="hXa-2V-sxo"/>
                                     <constraint firstAttribute="bottom" secondItem="eSY-1v-1ps" secondAttribute="bottom" constant="20" id="jlG-TY-Htf"/>
                                     <constraint firstAttribute="trailing" secondItem="FI3-ex-2a6" secondAttribute="trailing" id="lS2-Ur-FNJ"/>
                                 </constraints>
@@ -265,6 +265,7 @@
                     <connections>
                         <outlet property="createdLabel" destination="lki-1w-p7r" id="mZ8-d3-0lf"/>
                         <outlet property="descTextView" destination="cGc-TL-Xi8" id="TmZ-Hl-b3I"/>
+                        <outlet property="descTextViewHeightConstraint" destination="wKG-ib-8de" id="6MD-74-Ya0"/>
                         <outlet property="progressButton" destination="5sN-kl-uNY" id="aVl-id-xBC"/>
                     </connections>
                 </viewController>
