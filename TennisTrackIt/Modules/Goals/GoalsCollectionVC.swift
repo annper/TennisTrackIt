@@ -22,6 +22,32 @@ class GoalsCollectionVC: UICollectionViewController {
   private let reuseIdentifier = "GoalCell"
   private var allGoals = [Goal]()
   
+  // MARK: - IBOutlets
+  
+  @IBOutlet var settingsBarButtonItem: UIBarButtonItem! { didSet {
+    settingsBarButtonItem.tintColor = UIColor.black
+  }}
+  
+  // MARK: - IBActions
+  
+  @IBAction func didTapSettingsBarButtonItem(_ sender: UIBarButtonItem) {
+    let alert = UIAlertController(title: "Order goal", message: nil, preferredStyle: .actionSheet)
+    
+    // Sort alphabetically
+    let alphabetic = UIAlertAction(title: "Alphabetic", style: .default) { (_) in
+      self.updateSortSetting(to: .alphabetic)
+    }
+    alert.addAction(alphabetic)
+    
+    // Sort with last created at the top
+    let createdDate = UIAlertAction(title: "Created by", style: .default) { (_) in
+      self.updateSortSetting(to: .createdDate)
+    }
+    alert.addAction(createdDate)
+    
+    present(alert, animated: true, completion: nil)
+  }
+  
   // MARK: - UIViewController
   
   override func viewDidLoad() {
@@ -59,21 +85,44 @@ class GoalsCollectionVC: UICollectionViewController {
     }
   }
   
+//  private func indexPathForSelectedItem() -> IndexPath? {
+//    return collectionView?.indexPathsForSelectedItems?.first
+//  }
+  
   private func loadSavedGoals() {
     
     guard let savedGoals = goalDataManager.savedGoals() else {
       return
     }
+
+    let sorted = savedGoals.sortedGoals()
+    allGoals = sorted
+  }
+  
+  private func updateSortSetting(to sortType: SortType) {
+    goalDataManager.updateSortSetting(to: sortType)
+    refreshGoalList()
+  }
+  
+  private func showDeleteGoalAlert(forGoal goal: Goal, completeDeletion: ((UIAlertAction) -> Void)?) {
     
-    // Sort goals to show newest goal at the top
-    let sortedGoals = savedGoals.goals.sorted { $0.id > $1.id }
-    allGoals = sortedGoals
+    let alert = UIAlertController(title: "Delete \(goal.title)", message: "Are you sure you wish to delete this goal?", preferredStyle: .alert)
+    
+    let okAction = UIAlertAction(title: "Ok", style: .default, handler: completeDeletion)
+    alert.addAction(okAction)
+    
+    let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+    alert.addAction(cancelAction)
+    
+    present(alert, animated: true, completion: nil)
   }
   
   private func removeGoal(_ goal: Goal, atIndexPath indexPath: IndexPath) {
-    goalDataManager.delete(goal)
-    loadSavedGoals()
-    collectionView?.deleteItems(at: [indexPath])
+    showDeleteGoalAlert(forGoal: goal) { (_) in
+      self.goalDataManager.delete(goal)
+      self.loadSavedGoals()
+      self.collectionView?.deleteItems(at: [indexPath])
+    }
   }
   
   private func refreshGoalList() {
@@ -90,21 +139,19 @@ class GoalsCollectionVC: UICollectionViewController {
     
     switch segueIdentifier {
       
-      // Prepare to show GoalDetailVC
-      case SegueIdentifier.goalDetail:
-        
-        guard let goalDetailVC = segue.destination as? GoalDetailVC else {
-          Logger.warn("GoalDetailVC could not be loaded from segue")
-          return
-        }
+    // Prepare to show GoalDetailVC
+    case SegueIdentifier.goalDetail:
       
-      // TODO: - Prepare data
-    case SegueIdentifier.addGoal:
-      break;
-//      guard let
-      
-      default:
+      guard let goalDetailVC = segue.destination as? GoalDetailVC else {
+        Logger.warn("GoalDetailVC could not be loaded from segue")
         return
+      }
+    
+      if let indexPath = collectionView?.indexPathForSelectedItem {
+        goalDetailVC.goal = allGoals[indexPath.row]
+      }
+    default:
+      return
     }
     
   }

@@ -25,6 +25,8 @@
 		D1025AF72049BB82007D55D8 /* CreateGoalVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1025AF52049BB82007D55D8 /* CreateGoalVC.swift */; };
 		D1025AFA204C48CB007D55D8 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1025AF9204C48CB007D55D8 /* String.swift */; };
 		D1025AFB204C48CB007D55D8 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1025AF9204C48CB007D55D8 /* String.swift */; };
+		D174B5D5204D6E30001BB767 /* UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D174B5D4204D6E30001BB767 /* UICollectionView.swift */; };
+		D174B5D6204D6E30001BB767 /* UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D174B5D4204D6E30001BB767 /* UICollectionView.swift */; };
 		D18BBF8E20482CD800FCB60F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18BBF8D20482CD800FCB60F /* AppDelegate.swift */; };
 		D18BBF9320482CD800FCB60F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D18BBF9120482CD800FCB60F /* Main.storyboard */; };
 		D18BBF9520482CD800FCB60F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D18BBF9420482CD800FCB60F /* Assets.xcassets */; };
@@ -67,6 +69,7 @@
 		D1025AF12049B474007D55D8 /* GoalDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalDataManager.swift; sourceTree = "<group>"; };
 		D1025AF52049BB82007D55D8 /* CreateGoalVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGoalVC.swift; sourceTree = "<group>"; };
 		D1025AF9204C48CB007D55D8 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		D174B5D4204D6E30001BB767 /* UICollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionView.swift; sourceTree = "<group>"; };
 		D18BBF8A20482CD800FCB60F /* TennisTrackIt [Development].app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TennisTrackIt [Development].app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D18BBF8D20482CD800FCB60F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D18BBF9220482CD800FCB60F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -140,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				D1025AF9204C48CB007D55D8 /* String.swift */,
+				D174B5D4204D6E30001BB767 /* UICollectionView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -492,6 +496,7 @@
 			files = (
 				D1025AF22049B474007D55D8 /* GoalDataManager.swift in Sources */,
 				D1025AFA204C48CB007D55D8 /* String.swift in Sources */,
+				D174B5D5204D6E30001BB767 /* UICollectionView.swift in Sources */,
 				D1025AF62049BB82007D55D8 /* CreateGoalVC.swift in Sources */,
 				D1025AEF2049B427007D55D8 /* BaseDataManager.swift in Sources */,
 				D18BBF8E20482CD800FCB60F /* AppDelegate.swift in Sources */,
@@ -512,6 +517,7 @@
 			files = (
 				D1025AF32049B474007D55D8 /* GoalDataManager.swift in Sources */,
 				D1025AFB204C48CB007D55D8 /* String.swift in Sources */,
+				D174B5D6204D6E30001BB767 /* UICollectionView.swift in Sources */,
 				D1025AF72049BB82007D55D8 /* CreateGoalVC.swift in Sources */,
 				D1025AF02049B427007D55D8 /* BaseDataManager.swift in Sources */,
 				D18BBFA220482D1D00FCB60F /* AppDelegate.swift in Sources */,

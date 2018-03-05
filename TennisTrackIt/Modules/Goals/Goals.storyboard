@@ -57,6 +57,11 @@
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" title="Goals" id="Yqx-n9-ljy">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="settings" id="pjL-wf-JuJ">
+                            <connections>
+                                <action selector="didTapSettingsBarButtonItem:" destination="aG6-Vt-p8h" id="Th0-DT-rlS"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="394-l5-pvp">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
@@ -66,6 +71,7 @@
                     </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="settingsBarButtonItem" destination="pjL-wf-JuJ" id="OP0-fK-YPi"/>
                         <segue destination="Hpx-z3-S2w" kind="show" identifier="GoalDetailSegue" id="MZr-Yi-cNe"/>
                     </connections>
                 </collectionViewController>
@@ -201,4 +207,7 @@
             <point key="canvasLocation" x="-42" y="798"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="settings" width="24" height="24"/>
+    </resources>
 </document>

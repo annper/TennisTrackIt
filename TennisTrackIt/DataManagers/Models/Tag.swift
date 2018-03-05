@@ -35,5 +35,4 @@ enum TagType: String {
   case goal = "goal"
   case skill = "skill"
   case drill = "drill"
-  
 }

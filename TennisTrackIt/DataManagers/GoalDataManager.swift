@@ -43,12 +43,6 @@ class GoalDataManager: BaseDataManager {
     if let savedList = savedGoals() {
       goalList = savedList
       
-      // Sort after id lowest to highest
-//      let sortedGoals = goalList.goals.sorted { $0.id < $1.id }
-//
-//      // increment the last id with
-//      id = sortedGoals.last!.id + 1
-      
       // Set a unique id by finding the highest current id and increment by one
       id = (goalList.goals.map({ $0.id }).max() ?? 1) + 1
     }
@@ -101,6 +95,18 @@ class GoalDataManager: BaseDataManager {
     // Re-save the list
     saveGoalList(savedList)
     
+  }
+  
+  /// Save the goal list with a new SortType
+  public func updateSortSetting(to sortType: SortType) {
+    guard let goalList = savedGoals() else {
+      Logger.warn("There are currently no saved goals")
+      return
+    }
+    
+    goalList.sortType = sortType
+    
+    saveGoalList(goalList)
   }
   
   // MARK: - Private methods

@@ -10,7 +10,7 @@ import UIKit
 
 class GoalDetailVC: UIViewController {
   
-  private var goal: Goal!
+  public var goal: Goal!
   
   @IBOutlet var descTextView: UITextView! { didSet {
     descTextView.layer.cornerRadius = 5
@@ -20,9 +20,7 @@ class GoalDetailVC: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    
-//    navigationController?.navigationItem.title = goal.title
-   
+      
     Logger.info("GoalDetailVC")
   }
   

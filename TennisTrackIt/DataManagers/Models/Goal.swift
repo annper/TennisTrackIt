@@ -13,8 +13,9 @@ import ObjectMapper
 
 class GoalList: Mappable {
   
+  public var sortType: SortType = .createdDate
   public var goals: [Goal] = []
-  
+
   // MARK: - Mappable
   
   public required convenience init?(map: Map) {
@@ -23,6 +24,7 @@ class GoalList: Mappable {
   
   public func mapping(map: Map) {
     goals <- map["goals"]
+    sortType <- (map["sortType"], EnumTransform<SortType>())
   }
   
   // MARK: - Public methods
@@ -30,7 +32,23 @@ class GoalList: Mappable {
   func findGoal(withId id: Int) -> Goal? {
     return goals.filter({ id == $0.id }).first
   }
+  
+  func sortedGoals() -> [Goal] {
+    switch sortType {
+    case .alphabetic:
+      return goals.sorted { $0.title < $1.title }
+    case .createdDate:
+      return goals.sorted { $0.id > $1.id }
+    }
+  }
 
+}
+
+// MARK: - SortType
+
+enum SortType: String {
+  case alphabetic = "alphabetic"
+  case createdDate = "createdDate"
 }
 
 // MARK: - Goal
