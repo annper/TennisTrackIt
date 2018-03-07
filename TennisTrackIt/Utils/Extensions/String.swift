@@ -8,6 +8,10 @@
 
 extension String {
   
+  public var isBlank: Bool {
+    return self.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+  }
+  
   func performBackspace() -> String {
     
     return String(self[..<self.index(before: self.endIndex)])    

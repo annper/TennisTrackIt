@@ -24,9 +24,10 @@ class CreateGoalVC: UIViewController, UITextFieldDelegate, UITextViewDelegate {
     titleTextField.layer.cornerRadius = 5
   }}
   
-  @IBOutlet var descTextView: UITextView! { didSet {
+  @IBOutlet var descTextView: CustomTextView! { didSet {
     descTextView.delegate = self
     descTextView.layer.cornerRadius = 5
+    descTextView.placeholder = "Description placeholder"
   }}
   
   // MARK: - IBActions
@@ -97,4 +98,11 @@ class CreateGoalVC: UIViewController, UITextFieldDelegate, UITextViewDelegate {
   
   // MARK: - UITextViewDelegate
   
+  func textViewDidBeginEditing(_ textView: UITextView) {
+    textView.becomeFirstResponder()
+  }
+  
+  func textViewDidEndEditing(_ textView: UITextView) {
+    textView.resignFirstResponder()
+  }
 }
