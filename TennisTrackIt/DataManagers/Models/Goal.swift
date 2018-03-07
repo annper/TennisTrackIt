@@ -40,8 +40,21 @@ class GoalList: Mappable {
     case .createdDate:
       return goals.sorted { $0.id > $1.id }
     case .completionStatus:
-      return goals.sorted { $0.completed != $1.completed }
+      return sortByStatusAndTitle()
     }
+  }
+  
+  /// Primary sorting base on goal completion status (with in-progress goals first), secondary sorting based on title
+  private func sortByStatusAndTitle()  -> [Goal] {
+    
+    return goals.sorted { (one, two) -> Bool in
+      if one.completed != two.completed {
+        return !one.completed
+      } else {
+        return one.title < two.title
+      }
+    }
+    
   }
 
 }
