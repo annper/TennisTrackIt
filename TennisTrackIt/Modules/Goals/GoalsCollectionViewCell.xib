@@ -35,8 +35,8 @@
                                 <rect key="frame" x="0.0" y="0.0" width="400" height="40"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Goal title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yqM-m8-bHY">
-                                        <rect key="frame" x="20" y="10" width="73" height="20"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                                        <rect key="frame" x="55" y="9.5" width="77" height="21.5"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -47,13 +47,24 @@
                                             <action selector="didTapRemoveButton:" destination="pcf-kt-hxe" eventType="touchUpInside" id="oyB-by-fD6"/>
                                         </connections>
                                     </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="in-progress" translatesAutoresizingMaskIntoConstraints="NO" id="UBw-Rt-Cas">
+                                        <rect key="frame" x="15" y="6.5" width="27" height="27"/>
+                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="27" id="P34-dc-lhJ"/>
+                                            <constraint firstAttribute="width" constant="27" id="a6g-Wj-jn9"/>
+                                        </constraints>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.34901960780000002" blue="0.34901960780000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstItem="UBw-Rt-Cas" firstAttribute="leading" secondItem="Arn-Za-WdA" secondAttribute="leading" constant="15" id="03K-FL-06o"/>
                                     <constraint firstItem="cIE-ff-dgZ" firstAttribute="centerY" secondItem="Arn-Za-WdA" secondAttribute="centerY" id="1OV-2O-AtR"/>
-                                    <constraint firstItem="yqM-m8-bHY" firstAttribute="leading" secondItem="Arn-Za-WdA" secondAttribute="leading" constant="20" id="2ig-3Q-hdQ"/>
                                     <constraint firstAttribute="height" constant="40" id="4OB-po-9Xh"/>
+                                    <constraint firstItem="UBw-Rt-Cas" firstAttribute="centerY" secondItem="Arn-Za-WdA" secondAttribute="centerY" id="erO-4z-bx3"/>
                                     <constraint firstAttribute="trailing" secondItem="cIE-ff-dgZ" secondAttribute="trailing" constant="20" id="iOK-2p-O2F"/>
+                                    <constraint firstItem="yqM-m8-bHY" firstAttribute="leading" secondItem="UBw-Rt-Cas" secondAttribute="trailing" constant="13" id="owO-dz-C5d"/>
+                                    <constraint firstItem="cIE-ff-dgZ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="yqM-m8-bHY" secondAttribute="trailing" constant="15" id="sQr-Np-yTY"/>
                                     <constraint firstItem="yqM-m8-bHY" firstAttribute="centerY" secondItem="Arn-Za-WdA" secondAttribute="centerY" id="wza-FO-5RM"/>
                                 </constraints>
                             </view>
@@ -111,6 +122,7 @@
                 <outlet property="containerView" destination="Mlk-wR-M0K" id="dSN-DL-7Di"/>
                 <outlet property="containerViewWidthConstraint" destination="owf-qx-qW2" id="Y4k-h5-Puu"/>
                 <outlet property="descLabel" destination="NDZ-oa-m5S" id="wYC-mS-lL7"/>
+                <outlet property="statusIconImageView" destination="UBw-Rt-Cas" id="fCd-iM-bFK"/>
                 <outlet property="tagLabel" destination="YSk-uF-dmv" id="za6-lq-r6U"/>
                 <outlet property="titleLabel" destination="yqM-m8-bHY" id="aO8-hT-FOj"/>
             </connections>
@@ -119,5 +131,6 @@
     </objects>
     <resources>
         <image name="clear" width="24" height="24"/>
+        <image name="in-progress" width="24" height="24"/>
     </resources>
 </document>

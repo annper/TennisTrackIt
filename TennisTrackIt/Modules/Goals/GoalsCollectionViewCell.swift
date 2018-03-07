@@ -24,6 +24,11 @@ class GoalsCollectionViewCell: UICollectionViewCell {
   
   // MARK: - IBOutlets
   
+  @IBOutlet var statusIconImageView: UIImageView! { didSet {
+    statusIconImageView.image?.withRenderingMode(.alwaysTemplate)
+    statusIconImageView.tintColor = UIColor.white
+  }}
+  
   @IBOutlet var titleLabel: UILabel!
   
   @IBOutlet var tagLabel: UILabel!
@@ -63,12 +68,20 @@ class GoalsCollectionViewCell: UICollectionViewCell {
     
     titleLabel.text = item.goal.title
     descLabel.text = item.goal.description
+    
+    setStatusIcon()
   }
   
   // MARK: - Private methods
   
   private func deleteGoal() {
     removeGoal(goal, indexPath)
+  }
+  
+  private func setStatusIcon() {
+    let imageName = goal.completed ? "completed" : "in-progress"
+    
+    statusIconImageView.image = UIImage(named: imageName)
   }
   
 }

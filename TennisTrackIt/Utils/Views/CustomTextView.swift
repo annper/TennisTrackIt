@@ -60,7 +60,7 @@ class CustomTextView: UITextView {
     textColor = textColor?.withAlphaComponent(1)
   }
   
-  // Setup pre-conditions to show placeholder after first beign assigned
+  // Setup pre-conditions to show placeholder after initial setup
   private func prepareForPlaceholder() {
     isShowingPlaceholder = false
     text = ""
