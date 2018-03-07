@@ -35,7 +35,12 @@ class GoalDataManager: BaseDataManager {
   
   /// Save new goal
   public func add(_ goal: Goal) {
-    
+    add(goal, updated: false)
+  }
+  
+  private func add(_ goal: Goal, updated: Bool) {
+    let isNewGoal: Bool = !updated
+
     // Get the saved GoalList if there is one
     var goalList = GoalList()
     var id = 1
@@ -43,12 +48,18 @@ class GoalDataManager: BaseDataManager {
     if let savedList = savedGoals() {
       goalList = savedList
       
-      // Set a unique id by finding the highest current id and increment by one
-      id = (goalList.goals.map({ $0.id }).max() ?? 1) + 1
+      if isNewGoal {
+        // Set a unique id by finding the highest current id and increment by one
+        id = (goalList.goals.map({ $0.id }).max() ?? 1) + 1
+      }
+    }
+    
+    // Set the goal id if this is a new goal ( Updated goals already have an id )
+    if isNewGoal {
+      goal.id = id
     }
     
     // Append the new goal to the list of existing ones
-    goal.id = id
     goalList.goals.append(goal)
     
     // Convert GoalList object into a string
@@ -61,7 +72,7 @@ class GoalDataManager: BaseDataManager {
     
     deleteGoal(withId: goal.id)
     
-    add(goal)
+    add(goal, updated: true)
   }
   
   /// Delete goal

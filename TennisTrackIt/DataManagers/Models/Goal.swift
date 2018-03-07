@@ -74,7 +74,7 @@ enum SortType: String {
     case .alphabetic:
       title = "Alphabetically"
     case .createdDate:
-      title = "Last edited"
+      title = "Creation date"
     case .completionStatus:
       title = "Status"
     }
