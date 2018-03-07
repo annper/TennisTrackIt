@@ -7,6 +7,7 @@ install! 'cocoapods', :deterministic_uuids => false
 def all_pods
   pod 'SwiftyJSON'
   pod 'ObjectMapper', '~> 3.1'
+  pod 'TPKeyboardAvoiding'
 end
 
 target 'TennisTrackIt [Development]' do

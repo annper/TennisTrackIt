@@ -40,7 +40,10 @@ class GoalDetailVC: UIViewController, UITextViewDelegate {
   @IBOutlet var descTextView: UITextView! { didSet {
     descTextView.delegate = self
     descTextView.layer.cornerRadius = 5
+    
+    // Give the text inside the text view some padding
     descTextView.textContainerInset = UIEdgeInsets(top: 10, left: 15, bottom: 10, right: 15)
+    
     descTextView.text = goal.description
   }}
   
@@ -120,6 +123,10 @@ class GoalDetailVC: UIViewController, UITextViewDelegate {
       
       // Update bar button to say 'Edit'
       navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(didTapEditBarButtonItem(_:)))
+      
+      // Save changes
+      goal.description = descTextView.text.trimmingCharacters(in: .whitespacesAndNewlines)
+      goalDataManager.update(goal)
     }
     
   }

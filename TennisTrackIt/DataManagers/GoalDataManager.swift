@@ -59,29 +59,10 @@ class GoalDataManager: BaseDataManager {
   /// Update an existing goal
   public func update(_ goal: Goal) {
     
-    guard let thisGoal = findSavedGoal(withId: goal.id) else {
-      return
-    }
-    
     deleteGoal(withId: goal.id)
     
     add(goal)
-    
-//    updateGoal(withId: goal.id)
   }
-  
-  /// Update an existing goal with the specified id
-//  public func updateGoal(withId id: Int) {
-//
-//    guard let thisGoal = findSavedGoal(withId: id) else {
-//      return
-//    }
-//
-//    deleteGoal(withId: id)
-//
-//    add(thisGoal)
-//
-//  }
   
   /// Delete goal
   public func delete(_ goal: Goal) {
