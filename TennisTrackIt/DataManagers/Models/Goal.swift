@@ -39,6 +39,8 @@ class GoalList: Mappable {
       return goals.sorted { $0.title < $1.title }
     case .createdDate:
       return goals.sorted { $0.id > $1.id }
+    case .completionStatus:
+      return goals.sorted { $0.completed != $1.completed }
     }
   }
 
@@ -49,6 +51,7 @@ class GoalList: Mappable {
 enum SortType: String {
   case alphabetic = "alphabetic"
   case createdDate = "createdDate"
+  case completionStatus = "completionStatus"
   
   func sortDescriptor(_ type: SortType) -> String {
     let selected: String = "✔︎"
@@ -59,6 +62,8 @@ enum SortType: String {
       title = "Alphabetically"
     case .createdDate:
       title = "Last edited"
+    case .completionStatus:
+      title = "Status"
     }
     
     return type == self ? "\(title) \(selected)" : title

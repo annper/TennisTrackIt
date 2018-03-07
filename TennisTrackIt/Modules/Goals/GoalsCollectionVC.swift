@@ -46,6 +46,12 @@ class GoalsCollectionVC: UICollectionViewController {
     }
     alert.addAction(createdDate)
     
+    // Sort to in-progres goals at the top
+    let completionStatus = UIAlertAction(title: activeSortType.sortDescriptor(.completionStatus), style: .default) { (_) in
+      self.updateSortSetting(to: .completionStatus)
+    }
+    alert.addAction(completionStatus)
+    
     // Cancel
     let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
     alert.addAction(cancel)
