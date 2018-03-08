@@ -29,6 +29,8 @@
 		D174B5D6204D6E30001BB767 /* UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D174B5D4204D6E30001BB767 /* UICollectionView.swift */; };
 		D174B5DC20503D13001BB767 /* CustomTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D174B5DB20503D13001BB767 /* CustomTextView.swift */; };
 		D174B5DD20503D13001BB767 /* CustomTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D174B5DB20503D13001BB767 /* CustomTextView.swift */; };
+		D174B5DF20517BF6001BB767 /* SkillsTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D174B5DE20517BF6001BB767 /* SkillsTableVC.swift */; };
+		D174B5E020517BF6001BB767 /* SkillsTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D174B5DE20517BF6001BB767 /* SkillsTableVC.swift */; };
 		D18BBF8E20482CD800FCB60F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18BBF8D20482CD800FCB60F /* AppDelegate.swift */; };
 		D18BBF9320482CD800FCB60F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D18BBF9120482CD800FCB60F /* Main.storyboard */; };
 		D18BBF9520482CD800FCB60F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D18BBF9420482CD800FCB60F /* Assets.xcassets */; };
@@ -73,6 +75,7 @@
 		D1025AF9204C48CB007D55D8 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		D174B5D4204D6E30001BB767 /* UICollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionView.swift; sourceTree = "<group>"; };
 		D174B5DB20503D13001BB767 /* CustomTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextView.swift; sourceTree = "<group>"; };
+		D174B5DE20517BF6001BB767 /* SkillsTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillsTableVC.swift; sourceTree = "<group>"; };
 		D18BBF8A20482CD800FCB60F /* TennisTrackIt [Development].app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TennisTrackIt [Development].app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D18BBF8D20482CD800FCB60F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D18BBF9220482CD800FCB60F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -237,6 +240,7 @@
 			isa = PBXGroup;
 			children = (
 				D18BBFB52048421100FCB60F /* Skills.storyboard */,
+				D174B5DE20517BF6001BB767 /* SkillsTableVC.swift */,
 			);
 			path = Skills;
 			sourceTree = "<group>";
@@ -511,6 +515,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D1025AF22049B474007D55D8 /* GoalDataManager.swift in Sources */,
+				D174B5DF20517BF6001BB767 /* SkillsTableVC.swift in Sources */,
 				D1025AFA204C48CB007D55D8 /* String.swift in Sources */,
 				D174B5D5204D6E30001BB767 /* UICollectionView.swift in Sources */,
 				D1025AF62049BB82007D55D8 /* CreateGoalVC.swift in Sources */,
@@ -533,6 +538,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D1025AF32049B474007D55D8 /* GoalDataManager.swift in Sources */,
+				D174B5E020517BF6001BB767 /* SkillsTableVC.swift in Sources */,
 				D1025AFB204C48CB007D55D8 /* String.swift in Sources */,
 				D174B5D6204D6E30001BB767 /* UICollectionView.swift in Sources */,
 				D1025AF72049BB82007D55D8 /* CreateGoalVC.swift in Sources */,
