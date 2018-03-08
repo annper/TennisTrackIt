@@ -16,10 +16,12 @@ class CustomTextView: UITextView {
   
   // MARK: - Public properties
   
+  /// The text entered by the user, ignoring the placeholder if it's currently being shown
   public var saveText: String { get {
     return isShowingPlaceholder ? "" : self.text
   }}
   
+  /// The text to show while the user hasn't entered anything into the TextView yet. Setting this will also remove any current text from the TextView and replace it with the placeholder
   public var placeholder: String? { didSet {
     prepareForPlaceholder()
   }}
