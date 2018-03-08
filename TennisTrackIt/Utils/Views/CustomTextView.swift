@@ -16,6 +16,10 @@ class CustomTextView: UITextView {
   
   // MARK: - Public properties
   
+  public var saveText: String { get {
+    return isShowingPlaceholder ? "" : self.text
+  }}
+  
   public var placeholder: String? { didSet {
     prepareForPlaceholder()
   }}
@@ -66,5 +70,6 @@ class CustomTextView: UITextView {
     text = ""
     showPlaceholder()
   }
+
 }
 

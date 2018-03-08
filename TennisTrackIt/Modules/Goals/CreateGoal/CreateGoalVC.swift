@@ -69,7 +69,7 @@ class CreateGoalVC: UIViewController, UITextFieldDelegate, UITextViewDelegate {
     let goal = Goal()
     
     goal.title = (titleTextField.text ?? "").trimmingCharacters(in: .whitespacesAndNewlines)
-    goal.description = (descTextView.text ?? "").trimmingCharacters(in: .whitespacesAndNewlines)
+    goal.description = (descTextView.saveText ).trimmingCharacters(in: .whitespacesAndNewlines)
     
     return goal
   }
