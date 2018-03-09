@@ -10,19 +10,22 @@ import Foundation
 import SwiftyJSON
 import ObjectMapper
 
-class GoalDataManager: BaseDataManager {
+protocol GoalInterface {
+  func savedGoals() -> GoalList?
+  func add(_ goal: Goal)
+  func update(_ goal: Goal)
+  func delete(_ goal: Goal)
+  func deleteGoal(withId id: Int)
+  func updateSortSetting(to sortType: SortType)
+}
+
+class GoalDataManager: BaseDataManager, GoalInterface {
   
   override init() {
     super.init()
     
     fileName = "goals.json"
   }
-  
-//  private let fileName: String = "goals.json"
-//  private let folderName: String = "data"
-//  private var filePath: String {
-//    return "\(folderName)/\(fileName)"
-//  }
   
   /// Get all saved goals
   public func savedGoals() -> GoalList? {
@@ -42,35 +45,6 @@ class GoalDataManager: BaseDataManager {
   /// Save new goal
   public func add(_ goal: Goal) {
     add(goal, updated: false)
-  }
-  
-  private func add(_ goal: Goal, updated: Bool) {
-    let isNewGoal: Bool = !updated
-
-    // Get the saved GoalList if there is one
-    var goalList = GoalList()
-    var id = 1
-    
-    if let savedList = savedGoals() {
-      goalList = savedList
-      
-      if isNewGoal {
-        // Set a unique id by finding the highest current id and increment by one
-        id = (goalList.goals.map({ $0.id }).max() ?? 1) + 1
-      }
-    }
-    
-    // Set the goal id if this is a new goal ( Updated goals already have an id )
-    if isNewGoal {
-      goal.id = id
-    }
-    
-    // Append the new goal to the list of existing ones
-    goalList.goals.append(goal)
-    
-    // Convert GoalList object into a string
-    saveGoalList(goalList)
-    
   }
   
   /// Update an existing goal
@@ -118,6 +92,35 @@ class GoalDataManager: BaseDataManager {
   
   // MARK: - Private methods
   
+  private func add(_ goal: Goal, updated: Bool) {
+    let isNewGoal: Bool = !updated
+    
+    // Get the saved GoalList if there is one
+    var goalList = GoalList()
+    var id = 1
+    
+    if let savedList = savedGoals() {
+      goalList = savedList
+      
+      if isNewGoal {
+        // Set a unique id by finding the highest current id and increment by one
+        id = (goalList.goals.map({ $0.id }).max() ?? 1) + 1
+      }
+    }
+    
+    // Set the goal id if this is a new goal ( Updated goals already have an id )
+    if isNewGoal {
+      goal.id = id
+    }
+    
+    // Append the new goal to the list of existing ones
+    goalList.goals.append(goal)
+    
+    // Convert GoalList object into a string
+    saveGoalList(goalList)
+    
+  }
+  
   private func saveGoalList(_ goalList: GoalList) {
     
     // Convert GoalList object into a string
@@ -129,21 +132,6 @@ class GoalDataManager: BaseDataManager {
     // Save the goal list
     saveToFile(named: fileName, inFolder: folderName, withContent: jsonString)
     
-  }
-  
-  private func findSavedGoal(withId id: Int) -> Goal? {
-    
-    guard let savedList = savedGoals() else {
-      Logger.warn("There are currently no saved goals")
-      return nil
-    }
-    
-    guard let thisGoal = savedList.findGoal(withId: id) else {
-      Logger.warn("Unable to find saved goal with id: \(id)")
-      return nil
-    }
-    
-    return thisGoal
   }
   
 }
