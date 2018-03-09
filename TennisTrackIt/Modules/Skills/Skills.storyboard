@@ -47,7 +47,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <searchBar contentMode="redraw" placeholder="Search skill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="84r-g1-sGR">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
+                                <rect key="frame" x="0.0" y="-1" width="375" height="60"/>
                                 <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="ZXK-1G-jFt"/>
@@ -59,7 +59,7 @@
                                 </connections>
                             </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Cvm-Fz-kqD">
-                                <rect key="frame" x="0.0" y="60" width="375" height="543"/>
+                                <rect key="frame" x="0.0" y="59" width="375" height="544"/>
                                 <color key="backgroundColor" red="0.878" green="0.87843137250000003" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="SkillCell" textLabel="c2K-UM-EpI" style="IBUITableViewCellStyleDefault" id="GEb-Mv-kAi">
@@ -89,7 +89,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="84r-g1-sGR" firstAttribute="top" secondItem="G4g-xG-qbD" secondAttribute="top" id="6Oa-2L-J13"/>
+                            <constraint firstItem="84r-g1-sGR" firstAttribute="top" secondItem="LGp-Fg-piW" secondAttribute="top" constant="-1" id="6Oa-2L-J13"/>
                             <constraint firstItem="Cvm-Fz-kqD" firstAttribute="leading" secondItem="G4g-xG-qbD" secondAttribute="leading" id="8Vl-es-wDa"/>
                             <constraint firstItem="84r-g1-sGR" firstAttribute="leading" secondItem="G4g-xG-qbD" secondAttribute="leading" id="CAO-Bj-Mco"/>
                             <constraint firstItem="84r-g1-sGR" firstAttribute="trailing" secondItem="G4g-xG-qbD" secondAttribute="trailing" id="HSU-X7-wIc"/>

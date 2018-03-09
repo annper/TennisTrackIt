@@ -23,8 +23,7 @@ class SkillsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
   }}
   
   @IBOutlet var searchBar: UISearchBar! { didSet {
-    searchBar.layer.borderWidth = 2
-    searchBar.layer.borderColor = UIColor(red: 0.400, green: 0.800, blue: 1.000, alpha: 1).cgColor
+    searchBar.layer.shadowOpacity = 0
   }}
   
   // MARK: - IBActions
@@ -41,7 +40,8 @@ class SkillsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
   
   override func viewDidLoad() {
     super.viewDidLoad()
-
+    
+    navigationController?.navigationBar.hideShadow()
   }
   
   override func didReceiveMemoryWarning() {
@@ -65,9 +65,6 @@ class SkillsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
    // Pass the selected object to the new view controller.
    }
    */
-  
-  // MARK: - Private methods
-  
   
   // MARK: - UISearchBarDelegate
   
