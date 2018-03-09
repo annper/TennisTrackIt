@@ -12,11 +12,17 @@ import ObjectMapper
 
 class GoalDataManager: BaseDataManager {
   
-  private let fileName: String = "goals.json"
-  private let folderName: String = "data"
-  private var filePath: String {
-    return "\(folderName)/\(fileName)"
+  override init() {
+    super.init()
+    
+    fileName = "goals.json"
   }
+  
+//  private let fileName: String = "goals.json"
+//  private let folderName: String = "data"
+//  private var filePath: String {
+//    return "\(folderName)/\(fileName)"
+//  }
   
   /// Get all saved goals
   public func savedGoals() -> GoalList? {

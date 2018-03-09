@@ -59,6 +59,8 @@
 		D18BBFCE204967A700FCB60F /* GoalDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18BBFCC204967A700FCB60F /* GoalDetailVC.swift */; };
 		D198FBCC2052DC6F0075D44D /* UINavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D198FBCB2052DC6F0075D44D /* UINavigationBar.swift */; };
 		D198FBCD2052DC6F0075D44D /* UINavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D198FBCB2052DC6F0075D44D /* UINavigationBar.swift */; };
+		D198FBCF2052E2220075D44D /* SkillDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D198FBCE2052E2220075D44D /* SkillDataManager.swift */; };
+		D198FBD02052E2220075D44D /* SkillDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D198FBCE2052E2220075D44D /* SkillDataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -95,6 +97,7 @@
 		D18BBFC820495F1C00FCB60F /* GoalsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GoalsCollectionViewCell.xib; sourceTree = "<group>"; };
 		D18BBFCC204967A700FCB60F /* GoalDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalDetailVC.swift; sourceTree = "<group>"; };
 		D198FBCB2052DC6F0075D44D /* UINavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationBar.swift; sourceTree = "<group>"; };
+		D198FBCE2052E2220075D44D /* SkillDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillDataManager.swift; sourceTree = "<group>"; };
 		D81D9F9086275E8AEFFFC3A7 /* Pods_TennisTrackIt__Development_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TennisTrackIt__Development_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -273,6 +276,7 @@
 				D1025AE120499603007D55D8 /* Models */,
 				D1025AEE2049B427007D55D8 /* BaseDataManager.swift */,
 				D1025AF12049B474007D55D8 /* GoalDataManager.swift */,
+				D198FBCE2052E2220075D44D /* SkillDataManager.swift */,
 			);
 			path = DataManagers;
 			sourceTree = "<group>";
@@ -519,6 +523,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D198FBCC2052DC6F0075D44D /* UINavigationBar.swift in Sources */,
+				D198FBCF2052E2220075D44D /* SkillDataManager.swift in Sources */,
 				D1025AF22049B474007D55D8 /* GoalDataManager.swift in Sources */,
 				D174B5DF20517BF6001BB767 /* SkillsTableVC.swift in Sources */,
 				D1025AFA204C48CB007D55D8 /* String.swift in Sources */,
@@ -543,6 +548,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D198FBCD2052DC6F0075D44D /* UINavigationBar.swift in Sources */,
+				D198FBD02052E2220075D44D /* SkillDataManager.swift in Sources */,
 				D1025AF32049B474007D55D8 /* GoalDataManager.swift in Sources */,
 				D174B5E020517BF6001BB767 /* SkillsTableVC.swift in Sources */,
 				D1025AFB204C48CB007D55D8 /* String.swift in Sources */,

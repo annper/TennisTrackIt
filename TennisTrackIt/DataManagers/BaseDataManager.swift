@@ -9,9 +9,21 @@
 import Foundation
 import SwiftyJSON
 
+
 class BaseDataManager {
   
   // MARK: - Private properties
+  
+  /// Name of the file the data is stored in. Should be a .json file name
+  internal var fileName: String = "data.json"
+  
+  /// Name of the folder the data is stored in - Default value is "data"
+  internal let folderName: String = "data"
+  
+  /// Returns the path using the folderName and fileName properties
+  internal var filePath: String {
+    return "\(folderName)/\(fileName)"
+  }
   
   private var documentsDirectory: URL? {
     return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first
