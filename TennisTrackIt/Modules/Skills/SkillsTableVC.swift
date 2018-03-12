@@ -70,7 +70,8 @@ class SkillsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
     
     let sectionedSkills = savedSkills.getSectionedSkills()
     categories = sectionedSkills.sections
-    allSkills = sectionedSkills.skills    
+    allSkills = sectionedSkills.skills
+    
   }
   
   func removeDuplictes(_  array: [String]) -> [String] {
@@ -94,16 +95,19 @@ class SkillsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
   // MARK: - TableViewDataSource
   
   func numberOfSections(in tableView: UITableView) -> Int {
-    return categories.count //1
+    return categories.count
   }
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return allSkills[section].count//3
+    return allSkills[section].count
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     
     let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier, for: indexPath)
+    
+    let skill = allSkills[indexPath.section][indexPath.row]
+    cell.textLabel?.text = skill.title
     
     return cell
   }
@@ -134,7 +138,7 @@ class SkillsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
   }
   
   func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-    return "Header title"
+    return categories[section]
   }
   
 }
