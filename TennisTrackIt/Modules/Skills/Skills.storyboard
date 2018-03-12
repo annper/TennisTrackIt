@@ -12,6 +12,11 @@
     <customFonts key="customFonts">
         <array key="HelveticaNeue.ttc">
             <string>HelveticaNeue</string>
+            <string>HelveticaNeue-Bold</string>
+            <string>HelveticaNeue-Italic</string>
+        </array>
+        <array key="HelveticaNeueLights.ttc">
+            <string>HelveticaNeue-Light</string>
         </array>
     </customFonts>
     <scenes>
@@ -130,7 +135,121 @@
                     <view key="view" contentMode="scaleToFill" id="WSd-dR-t6G">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YuO-vZ-cf1" customClass="TPKeyboardAvoidingScrollView">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Assigning a category to the skill will make it easier to find later." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n9k-fR-wyO">
+                                        <rect key="frame" x="20" y="200" width="335" height="35.5"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Italic" family="Helvetica Neue" pointSize="15"/>
+                                        <color key="textColor" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your skill will be known by this name throughout the app, and should describe the skill you are trying to learn." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Naw-9A-9k3">
+                                        <rect key="frame" x="20" y="389.5" width="335" height="53"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Italic" family="Helvetica Neue" pointSize="15"/>
+                                        <color key="textColor" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BKX-Ih-gSU">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DHb-4t-9eA">
+                                                <rect key="frame" x="20" y="14.5" width="74.5" height="21"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                                                <color key="textColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Other" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zjb-l4-Dsc">
+                                                <rect key="frame" x="314" y="14.5" width="41" height="21"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                                <color key="textColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="zjb-l4-Dsc" secondAttribute="trailing" constant="20" id="J6S-9z-pnC"/>
+                                            <constraint firstItem="DHb-4t-9eA" firstAttribute="leading" secondItem="BKX-Ih-gSU" secondAttribute="leading" constant="20" id="Zzw-72-ZyC"/>
+                                            <constraint firstAttribute="height" constant="50" id="dQO-eL-UJJ"/>
+                                            <constraint firstItem="zjb-l4-Dsc" firstAttribute="centerY" secondItem="BKX-Ih-gSU" secondAttribute="centerY" id="eJK-pS-j0U"/>
+                                            <constraint firstItem="DHb-4t-9eA" firstAttribute="centerY" secondItem="BKX-Ih-gSU" secondAttribute="centerY" id="qMQ-dV-HNR"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KBk-XZ-LL6">
+                                        <rect key="frame" x="0.0" y="255.5" width="375" height="50"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Skill name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Mg-pr-Njf">
+                                                <rect key="frame" x="280.5" y="14.5" width="74.5" height="21"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                                <color key="textColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JMA-wd-y11">
+                                                <rect key="frame" x="20" y="14.5" width="35" height="21"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                                                <color key="textColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="5Mg-pr-Njf" secondAttribute="trailing" constant="20" id="0xh-zp-pU3"/>
+                                            <constraint firstAttribute="height" constant="50" id="Aex-be-e5i"/>
+                                            <constraint firstItem="5Mg-pr-Njf" firstAttribute="centerY" secondItem="KBk-XZ-LL6" secondAttribute="centerY" id="acf-zX-sx4"/>
+                                            <constraint firstItem="JMA-wd-y11" firstAttribute="centerY" secondItem="KBk-XZ-LL6" secondAttribute="centerY" id="gcM-zB-jJr"/>
+                                            <constraint firstItem="JMA-wd-y11" firstAttribute="leading" secondItem="KBk-XZ-LL6" secondAttribute="leading" constant="20" id="u62-FJ-H09"/>
+                                        </constraints>
+                                    </view>
+                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pOl-Ak-l29">
+                                        <rect key="frame" x="0.0" y="50" width="375" height="150"/>
+                                        <color key="tintColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="150" id="XSq-kn-Dzl"/>
+                                        </constraints>
+                                    </pickerView>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name of skill" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="cWt-i0-GRR">
+                                        <rect key="frame" x="20" y="325.5" width="335" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="KJB-lb-vLJ"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" red="0.55381264811166653" green="0.90459685105474397" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="Naw-9A-9k3" firstAttribute="leading" secondItem="YuO-vZ-cf1" secondAttribute="leading" constant="20" id="2eN-pl-Mne"/>
+                                    <constraint firstItem="cWt-i0-GRR" firstAttribute="leading" secondItem="YuO-vZ-cf1" secondAttribute="leading" constant="20" id="30C-Zt-FgQ"/>
+                                    <constraint firstAttribute="trailing" secondItem="cWt-i0-GRR" secondAttribute="trailing" constant="20" id="4rp-Ki-cee"/>
+                                    <constraint firstItem="n9k-fR-wyO" firstAttribute="leading" secondItem="YuO-vZ-cf1" secondAttribute="leading" constant="20" id="BUp-lR-BFH"/>
+                                    <constraint firstItem="pOl-Ak-l29" firstAttribute="leading" secondItem="YuO-vZ-cf1" secondAttribute="leading" id="BbE-5s-maY"/>
+                                    <constraint firstItem="pOl-Ak-l29" firstAttribute="top" secondItem="BKX-Ih-gSU" secondAttribute="bottom" id="BjD-q3-qqN"/>
+                                    <constraint firstItem="Naw-9A-9k3" firstAttribute="top" secondItem="cWt-i0-GRR" secondAttribute="bottom" constant="20" id="Erg-Ep-evE"/>
+                                    <constraint firstAttribute="trailing" secondItem="n9k-fR-wyO" secondAttribute="trailing" constant="20" id="GKd-hN-wgP"/>
+                                    <constraint firstAttribute="trailing" secondItem="KBk-XZ-LL6" secondAttribute="trailing" id="K5S-B9-eGw"/>
+                                    <constraint firstAttribute="trailing" secondItem="Naw-9A-9k3" secondAttribute="trailing" constant="20" id="QY2-Sl-o8P"/>
+                                    <constraint firstItem="KBk-XZ-LL6" firstAttribute="top" secondItem="n9k-fR-wyO" secondAttribute="bottom" constant="20" id="Qoz-IX-KlW"/>
+                                    <constraint firstItem="BKX-Ih-gSU" firstAttribute="centerX" secondItem="YuO-vZ-cf1" secondAttribute="centerX" id="W3b-q7-Lz6"/>
+                                    <constraint firstAttribute="trailing" secondItem="pOl-Ak-l29" secondAttribute="trailing" id="d1t-li-TmG"/>
+                                    <constraint firstAttribute="bottom" secondItem="Naw-9A-9k3" secondAttribute="bottom" constant="20" id="fOM-6m-Ht4"/>
+                                    <constraint firstItem="n9k-fR-wyO" firstAttribute="top" secondItem="pOl-Ak-l29" secondAttribute="bottom" id="ghB-gk-YfY"/>
+                                    <constraint firstItem="KBk-XZ-LL6" firstAttribute="leading" secondItem="YuO-vZ-cf1" secondAttribute="leading" id="is5-HO-59f"/>
+                                    <constraint firstAttribute="trailing" secondItem="BKX-Ih-gSU" secondAttribute="trailing" id="khC-fr-WGs"/>
+                                    <constraint firstItem="BKX-Ih-gSU" firstAttribute="top" secondItem="YuO-vZ-cf1" secondAttribute="top" id="mGZ-XH-I7L"/>
+                                    <constraint firstItem="BKX-Ih-gSU" firstAttribute="leading" secondItem="YuO-vZ-cf1" secondAttribute="leading" id="qbr-zx-8Kx"/>
+                                    <constraint firstItem="cWt-i0-GRR" firstAttribute="top" secondItem="KBk-XZ-LL6" secondAttribute="bottom" constant="20" id="rIa-y6-mwg"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="h7B-7R-UjK" firstAttribute="bottom" secondItem="YuO-vZ-cf1" secondAttribute="bottom" id="8jI-pE-RqR"/>
+                            <constraint firstItem="YuO-vZ-cf1" firstAttribute="leading" secondItem="h7B-7R-UjK" secondAttribute="leading" id="Hfi-sM-gwR"/>
+                            <constraint firstItem="YuO-vZ-cf1" firstAttribute="top" secondItem="h7B-7R-UjK" secondAttribute="top" id="dOY-j3-uC7"/>
+                            <constraint firstItem="h7B-7R-UjK" firstAttribute="trailing" secondItem="YuO-vZ-cf1" secondAttribute="trailing" id="qxD-ub-aRg"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="h7B-7R-UjK"/>
                     </view>
                     <navigationItem key="navigationItem" title="Add skill" id="lDL-f4-qJL">
@@ -148,12 +267,16 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="categoryLabel" destination="zjb-l4-Dsc" id="PK0-iL-Xfz"/>
+                        <outlet property="categoryPickerView" destination="pOl-Ak-l29" id="3Uk-Yh-4M4"/>
                         <outlet property="doneBarButtonItem" destination="qxg-I9-BiE" id="TDL-Hu-tJj"/>
+                        <outlet property="titleLabel" destination="5Mg-pr-Njf" id="uFR-0v-fmJ"/>
+                        <outlet property="titleTextField" destination="cWt-i0-GRR" id="Aim-6b-u7F"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HfM-MN-d05" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="521" y="1075"/>
+            <point key="canvasLocation" x="520.79999999999995" y="1074.5127436281859"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="9iC-ar-e7I">

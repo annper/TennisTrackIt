@@ -44,7 +44,7 @@ class GoalList: Mappable {
     }
   }
   
-  /// Primary sorting base on goal completion status (with in-progress goals first), secondary sorting based on title
+  /// Primary sorting based on goal completion status (with in-progress goals first), secondary sorting based on title
   private func sortByStatusAndTitle()  -> [Goal] {
     
     return goals.sorted { (one, two) -> Bool in

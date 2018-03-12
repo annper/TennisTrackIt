@@ -80,4 +80,17 @@ enum SkillCategory: String {
   case ros = "Return of serve"
   case special = "Speciality shots"
   case other = "Other"
+  
+  static public var allValues: [String] {
+    return [
+      "Footwork",
+      "Tactics",
+      "Groundstrokes",
+      "Volleys",
+      "Serves",
+      "Return of serve",
+      "Speciality shots",
+      "Other"
+    ]
+  }
 }
