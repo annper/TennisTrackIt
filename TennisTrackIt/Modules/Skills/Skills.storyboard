@@ -84,6 +84,9 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <segue destination="2P6-W0-f5p" kind="show" identifier="SkillDetailSegue" id="nv4-Us-1UK"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -127,6 +130,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h8R-Gt-01f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-239.19999999999999" y="330.58470764617692"/>
+        </scene>
+        <!--Skill title-->
+        <scene sceneID="cMr-7e-RJe">
+            <objects>
+                <viewController id="2P6-W0-f5p" customClass="SkillDetailVC" customModule="TennisTrackIt__Development_" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1n6-dV-bI6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="J2t-ZO-Q2w"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Skill title" id="8El-5O-v09">
+                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="aFs-mL-5yk"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="m1g-FQ-0JQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="521" y="331"/>
         </scene>
         <!--Add skill-->
         <scene sceneID="yqI-Of-NO3">

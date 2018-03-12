@@ -65,6 +65,8 @@
 		D198FBD620568FDC0075D44D /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = D198FBD420568FDC0075D44D /* Array.swift */; };
 		D198FBDD205695D70075D44D /* CreateSkillVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D198FBDC205695D70075D44D /* CreateSkillVC.swift */; };
 		D198FBDE205695D70075D44D /* CreateSkillVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D198FBDC205695D70075D44D /* CreateSkillVC.swift */; };
+		D198FBE02056CEF30075D44D /* SkillDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D198FBDF2056CEF30075D44D /* SkillDetailVC.swift */; };
+		D198FBE12056CEF30075D44D /* SkillDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D198FBDF2056CEF30075D44D /* SkillDetailVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -104,6 +106,7 @@
 		D198FBCE2052E2220075D44D /* SkillDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillDataManager.swift; sourceTree = "<group>"; };
 		D198FBD420568FDC0075D44D /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
 		D198FBDC205695D70075D44D /* CreateSkillVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateSkillVC.swift; sourceTree = "<group>"; };
+		D198FBDF2056CEF30075D44D /* SkillDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillDetailVC.swift; sourceTree = "<group>"; };
 		D81D9F9086275E8AEFFFC3A7 /* Pods_TennisTrackIt__Development_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TennisTrackIt__Development_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -293,6 +296,7 @@
 		D198FBD7205695060075D44D /* SkillDetail */ = {
 			isa = PBXGroup;
 			children = (
+				D198FBDF2056CEF30075D44D /* SkillDetailVC.swift */,
 			);
 			path = SkillDetail;
 			sourceTree = "<group>";
@@ -562,6 +566,7 @@
 				D174B5DC20503D13001BB767 /* CustomTextView.swift in Sources */,
 				D1025AE9204997EB007D55D8 /* Skill.swift in Sources */,
 				D18BBFBF2048466C00FCB60F /* GoalsCollectionVC.swift in Sources */,
+				D198FBE02056CEF30075D44D /* SkillDetailVC.swift in Sources */,
 				D18BBFCD204967A700FCB60F /* GoalDetailVC.swift in Sources */,
 				D1025AE6204997C0007D55D8 /* Drill.swift in Sources */,
 				D198FBDD205695D70075D44D /* CreateSkillVC.swift in Sources */,
@@ -589,6 +594,7 @@
 				D174B5DD20503D13001BB767 /* CustomTextView.swift in Sources */,
 				D1025AEA204997EB007D55D8 /* Skill.swift in Sources */,
 				D18BBFC02048466C00FCB60F /* GoalsCollectionVC.swift in Sources */,
+				D198FBE12056CEF30075D44D /* SkillDetailVC.swift in Sources */,
 				D18BBFCE204967A700FCB60F /* GoalDetailVC.swift in Sources */,
 				D1025AE7204997C0007D55D8 /* Drill.swift in Sources */,
 				D198FBDE205695D70075D44D /* CreateSkillVC.swift in Sources */,
