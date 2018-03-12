@@ -27,6 +27,7 @@ class SkillDataManager: BaseDataManager, SkillInterface {
   }
   
   /// Get all saved skills
+  /// - returns: All saved skills as a SkillList object
   public func savedSkills() -> SkillList? {
     
     guard let json = readFile(atPath: filePath) else {
@@ -41,12 +42,28 @@ class SkillDataManager: BaseDataManager, SkillInterface {
     return Mapper<SkillList>().map(JSON: dict, toObject: SkillList())
   }
   
-  /// Save new goal
+  /**
+   Add a new skill
+   
+   - parameters:
+     - skill: The Skill to add
+   - returns:
+     - true - The skill was added successfully
+     - false - The skill was not added. A skill with the same title already exists
+  */
   public func add(_ skill: Skill) -> Success {
     return add(skill, updated: false)
   }
   
-  /// Update an existing skill
+  /**
+   Update an existing skill
+   
+   - parameters:
+     - skill: The Skill to update
+   - returns:
+     - true - The skill was updated successfully
+     - false - The skill was not updated. A skill with the same title already exists
+   */
   public func update(_ skill: Skill) -> Success {
 
     deleteSkill(withId: skill.id)
@@ -60,6 +77,7 @@ class SkillDataManager: BaseDataManager, SkillInterface {
   }
 
   /// Delete skill with id
+  /// - parameter id: id of the skill to be deleted
   public func deleteSkill(withId id: Int) {
 
     // Get all saved skills
