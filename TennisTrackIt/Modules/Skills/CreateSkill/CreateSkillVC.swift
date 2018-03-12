@@ -58,13 +58,18 @@ class CreateSkillVC: UIViewController {
     super.viewDidLoad()
     
     Logger.info("CreateSkillVC")
-    
   }
   
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
     
     Logger.warn("didReceiveMemoryWarning")
+  }
+  
+  // Close keyboard if tapping outside the textField
+  override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+    guard titleTextField.isFirstResponder else { return }
+    titleTextField.resignFirstResponder()
   }
   
   // MARK: - Private methods
@@ -99,12 +104,17 @@ extension CreateSkillVC: UITextFieldDelegate {
     doneBarButtonItem.isEnabled = !currentText.isEmpty
     
     return true
-    
   }
   
   func textFieldShouldClear(_ textField: UITextField) -> Bool {
     titleLabel.text = ""
     doneBarButtonItem.isEnabled = false
+    return true
+  }
+  
+  // Handle the keyboard
+  func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    textField.resignFirstResponder()
     return true
   }
   
