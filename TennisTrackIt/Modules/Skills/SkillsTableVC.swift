@@ -43,23 +43,6 @@ class SkillsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
   override func viewDidLoad() {
     super.viewDidLoad()
     
-//    let skill = Skill()
-//
-//    skill.category = .footwork
-//    skillDataManger.add(skill)
-//
-//    skill.category = .groundstrokes
-//    skillDataManger.add(skill)
-//
-//    skill.category = .groundstrokes
-//    skillDataManger.add(skill)
-//
-//    skill.category = .ros
-//    skillDataManger.add(skill)
-//
-//    skill.category = .ros
-//    skillDataManger.add(skill)
-    
     navigationController?.navigationBar.hideShadow()
     
     loadSavedSkills()
@@ -85,21 +68,14 @@ class SkillsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
       return
     }
     
-    categories = removeDuplictes(savedSkills.skills.map({ $0.category.rawValue }))
-    let sortedSkills = [savedSkills.skills.sorted { $0.category.rawValue < $1.category.rawValue }]
-    allSkills = sortedSkills//savedSkills.skills
-    
-    
+    let sectionedSkills = savedSkills.getSectionedSkills()
+    categories = sectionedSkills.sections
+    allSkills = sectionedSkills.skills    
   }
   
   func removeDuplictes(_  array: [String]) -> [String] {
     return array.reduce([]) { (result, category) -> [String] in
       return result.contains(category) ? result : result + [category]
-//      if !result.contains(category) {
-//        return result + [category]
-//      } else {
-//        return result
-//      }
     }
   }
   

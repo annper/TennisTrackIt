@@ -61,6 +61,8 @@
 		D198FBCD2052DC6F0075D44D /* UINavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D198FBCB2052DC6F0075D44D /* UINavigationBar.swift */; };
 		D198FBCF2052E2220075D44D /* SkillDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D198FBCE2052E2220075D44D /* SkillDataManager.swift */; };
 		D198FBD02052E2220075D44D /* SkillDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D198FBCE2052E2220075D44D /* SkillDataManager.swift */; };
+		D198FBD520568FDC0075D44D /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = D198FBD420568FDC0075D44D /* Array.swift */; };
+		D198FBD620568FDC0075D44D /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = D198FBD420568FDC0075D44D /* Array.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -98,6 +100,7 @@
 		D18BBFCC204967A700FCB60F /* GoalDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalDetailVC.swift; sourceTree = "<group>"; };
 		D198FBCB2052DC6F0075D44D /* UINavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationBar.swift; sourceTree = "<group>"; };
 		D198FBCE2052E2220075D44D /* SkillDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillDataManager.swift; sourceTree = "<group>"; };
+		D198FBD420568FDC0075D44D /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
 		D81D9F9086275E8AEFFFC3A7 /* Pods_TennisTrackIt__Development_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TennisTrackIt__Development_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -157,6 +160,7 @@
 				D1025AF9204C48CB007D55D8 /* String.swift */,
 				D174B5D4204D6E30001BB767 /* UICollectionView.swift */,
 				D198FBCB2052DC6F0075D44D /* UINavigationBar.swift */,
+				D198FBD420568FDC0075D44D /* Array.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -531,6 +535,7 @@
 				D1025AF62049BB82007D55D8 /* CreateGoalVC.swift in Sources */,
 				D1025AEF2049B427007D55D8 /* BaseDataManager.swift in Sources */,
 				D18BBF8E20482CD800FCB60F /* AppDelegate.swift in Sources */,
+				D198FBD520568FDC0075D44D /* Array.swift in Sources */,
 				D18BBFC620484F3F00FCB60F /* GoalsCollectionViewCell.swift in Sources */,
 				D1025AEC20499818007D55D8 /* Tag.swift in Sources */,
 				D18BBFC32048471900FCB60F /* Logger.swift in Sources */,
@@ -556,6 +561,7 @@
 				D1025AF72049BB82007D55D8 /* CreateGoalVC.swift in Sources */,
 				D1025AF02049B427007D55D8 /* BaseDataManager.swift in Sources */,
 				D18BBFA220482D1D00FCB60F /* AppDelegate.swift in Sources */,
+				D198FBD620568FDC0075D44D /* Array.swift in Sources */,
 				D18BBFC720484F3F00FCB60F /* GoalsCollectionViewCell.swift in Sources */,
 				D1025AED20499818007D55D8 /* Tag.swift in Sources */,
 				D18BBFC42048471900FCB60F /* Logger.swift in Sources */,

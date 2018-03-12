@@ -13,6 +13,11 @@ class SkillList: Mappable {
   
   public var skills: [Skill] = []
   
+  public struct SectionedSkills {
+    var sections: [String]
+    var skills: [[Skill]]
+  }
+  
   // MARK: - Mappable
   
   public required convenience init?(map: Map) {
@@ -22,6 +27,24 @@ class SkillList: Mappable {
   public func mapping(map: Map) {
     skills <- map["skills"]
   }
+  
+  // MARK: - Public methods
+  
+  public func getSectionedSkills() -> SectionedSkills {
+    
+    let sections = skills.map({ $0.category.rawValue }).removeDuplicates()
+    var sectionedSkills = Array(repeatElement([Skill](), count: sections.count))
+
+    let sortedSkills = skills.sorted { $0.category.rawValue < $1.category.rawValue }
+    
+    sectionedSkills = sortedSkills.reduce(into: sectionedSkills) { (result, skill) in
+      let index = Int(sections.index(of: skill.category.rawValue) ?? 0)
+      result[index].append(skill)
+    }
+    
+    return SectionedSkills(sections: sections, skills: sectionedSkills)
+  }
+  
 }
 
 class Skill: Mappable {
@@ -54,7 +77,7 @@ enum SkillCategory: String {
   case groundstrokes = "Groundstrokes"
   case volleys = "Volleys"
   case serves = "Serves"
-  case  ros = "Return of serve"
+  case ros = "Return of serve"
   case special = "Speciality shots"
   case other = "Other"
 }
