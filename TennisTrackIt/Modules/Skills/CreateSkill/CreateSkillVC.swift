@@ -12,6 +12,7 @@ class CreateSkillVC: UIViewController {
   
   // MARK: - Private properties
   
+  let skillDataManager = SkillDataManager()
   var assignedCategory: SkillCategory = .other
   
   // MARK: - IBOutlets
@@ -47,8 +48,8 @@ class CreateSkillVC: UIViewController {
   }
   
   @IBAction func didTapDoneBarButtonItem(_ sender: UIBarButtonItem) {
-    
-    Logger.info("didTapDoneBarButtonItem")
+    createAndSaveSkill()
+    dismiss(animated: true, completion: nil)
   }
   
   // MARK: - UIViewController
@@ -64,6 +65,19 @@ class CreateSkillVC: UIViewController {
     super.didReceiveMemoryWarning()
     
     Logger.warn("didReceiveMemoryWarning")
+  }
+  
+  // MARK: - Private methods
+  
+  private func createAndSaveSkill() {
+    
+    // Create the new skill
+    let skill = Skill()
+    skill.title = (titleLabel.text ?? "").trimmingCharacters(in: .whitespacesAndNewlines)
+    skill.category = assignedCategory
+    
+    // Save the skill
+    skillDataManager.add(skill)
   }
   
 }
