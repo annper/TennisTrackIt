@@ -10,9 +10,16 @@ import UIKit
 
 class SkillDetailVC: UIViewController {
   
+  // MARK: - Public properties
+  
+  public var skill: Skill!
+  
+  // MARK: - UIViewController
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    title = skill.title
     Logger.info("SkillDetailVC")
   }
   

@@ -12,8 +12,8 @@ import ObjectMapper
 
 protocol SkillInterface {
   func savedSkills() -> SkillList?
-  func add(_ skill: Skill)
-  func update(_ skill: Skill)
+  func add(_ skill: Skill) -> Bool
+  func update(_ skill: Skill) -> Bool
   func delete(_ skill: Skill)
   func deleteSkill(withId id: Int)
 }
@@ -42,16 +42,16 @@ class SkillDataManager: BaseDataManager, SkillInterface {
   }
   
   /// Save new goal
-  public func add(_ skill: Skill) {
-    add(skill, updated: false)
+  public func add(_ skill: Skill) -> Success {
+    return add(skill, updated: false)
   }
   
   /// Update an existing skill
-  public func update(_ skill: Skill) {
+  public func update(_ skill: Skill) -> Success {
 
     deleteSkill(withId: skill.id)
 
-    add(skill, updated: true)
+    return add(skill, updated: true)
   }
   
   /// Delete skill
@@ -78,8 +78,9 @@ class SkillDataManager: BaseDataManager, SkillInterface {
   
   // MARK: - Private methods
   
-  private func add(_ skill: Skill, updated: Bool) {
+  private func add(_ skill: Skill, updated: Bool) -> Success {
     let isNewSkill: Bool = !updated
+    let hasUniqueTitle: Bool
     
     var skillList = SkillList()
     var id = 1
@@ -90,6 +91,8 @@ class SkillDataManager: BaseDataManager, SkillInterface {
       if isNewSkill {
         // Set a unique id by finding the highest current id and increment by one
         id = (skillList.skills.map({ $0.id }).max() ?? 1) + 1
+        hasUniqueTitle = skillList.hasSkillWithSameTitle(asSkill: skill)
+        guard hasUniqueTitle else { return false }
       }
     }
     
@@ -101,6 +104,8 @@ class SkillDataManager: BaseDataManager, SkillInterface {
     
     // Save the list
     saveSkillList(skillList)
+    
+    return true
   }
   
   private func saveSkillList(_ skillList: SkillList) {

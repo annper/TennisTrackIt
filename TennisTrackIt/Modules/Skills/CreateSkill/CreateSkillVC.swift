@@ -49,7 +49,6 @@ class CreateSkillVC: UIViewController {
   
   @IBAction func didTapDoneBarButtonItem(_ sender: UIBarButtonItem) {
     createAndSaveSkill()
-    dismiss(animated: true, completion: nil)
   }
   
   // MARK: - UIViewController
@@ -82,7 +81,27 @@ class CreateSkillVC: UIViewController {
     skill.category = assignedCategory
     
     // Save the skill
-    skillDataManager.add(skill)
+    let success = skillDataManager.add(skill)
+    
+    if success {
+      dismiss(animated: true, completion: nil)
+    } else {
+      showTitleWarningAlert()
+    }
+
+  }
+  
+  private func showTitleWarningAlert() {
+    let alert = UIAlertController(title: "Title must be unique", message: "A skill named \"\(titleLabel.text ?? "")\" already exists. Please change it and try again.", preferredStyle: .alert)
+    
+    let ok = UIAlertAction(title: "Ok", style: .default) { (_) in
+      
+      // Focus on the text field and open the keyboard
+      self.titleTextField.becomeFirstResponder()
+    }
+    alert.addAction(ok)
+    
+    present(alert, animated: true, completion: nil)
   }
   
 }

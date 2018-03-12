@@ -12,7 +12,9 @@ import SwiftyJSON
 
 class BaseDataManager {
   
-  // MARK: - Private properties
+  // MARK: - Internal properties
+  
+  typealias Success = Bool
   
   /// Name of the file the data is stored in. Should be a .json file name
   internal var fileName: String = "data.json"
@@ -24,6 +26,8 @@ class BaseDataManager {
   internal var filePath: String {
     return "\(folderName)/\(fileName)"
   }
+  
+  // MARK: - Private properties
   
   private var documentsDirectory: URL? {
     return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first

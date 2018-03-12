@@ -17,6 +17,7 @@ class SkillsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
   private var categories: [String] = []
   private var allSkills: [[Skill]] = [[]]
   private var searchActive: Bool = false
+  private let skillDetailSegueIdentifier: String = "SkillDetailSegue"
   
   // MARK: - IBOutlets
   
@@ -80,17 +81,33 @@ class SkillsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
     }
   }
   
-  /*
+  
    // MARK: - Navigation
    
    // In a storyboard-based application, you will often want to do a little preparation before navigation
-   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-   // Get the new view controller using segue.destinationViewController.
-   // Pass the selected object to the new view controller.
-   }
-   */
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    
+    let segueIdentifier = segue.identifier ?? ""
+    Logger.info("Performing preparation for segue with identifier: \(segueIdentifier)")
+    
+    switch segueIdentifier {
+    case skillDetailSegueIdentifier:
+      guard let skillDetailVC = segue.destination as? SkillDetailVC else {
+        Logger.warn("Failed to load SkillDetailVC from segue")
+        return
+      }
+      
+      if let indexPath = tableView.indexPathForSelectedRow {
+        skillDetailVC.skill = allSkills[indexPath.section][indexPath.row]
+      }
+      
+    default: return
+    }
+    
+    
+  }
   
-  // MARK: - UISearchBarDelegate
+  // MARK: - UISearchBarDelegate - TODO
   
   // MARK: - TableViewDataSource
   
@@ -131,10 +148,6 @@ class SkillsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
     header.textLabel?.textColor = UIColor(red: 0.459, green: 0.459, blue: 0.459, alpha: 1)
     header.textLabel?.font = UIFont(name: "HelveticaNeue-Regular", size: 16.0)
     
-  }
-  
-  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    Logger.info("Selected row at indexPath: \(indexPath)")
   }
   
   func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {

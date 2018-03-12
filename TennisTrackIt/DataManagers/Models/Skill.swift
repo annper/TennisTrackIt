@@ -30,6 +30,11 @@ class SkillList: Mappable {
   
   // MARK: - Public methods
   
+  public func hasSkillWithSameTitle(asSkill skill: Skill) -> Bool {
+    let skillWithSameTitle = skills.filter({ $0.title == skill.title })
+    return skillWithSameTitle.count > 0
+  }
+  
   public func getSectionedSkills() -> SectionedSkills {
     
     let sections = skills.map({ $0.category.rawValue }).removeDuplicates()
