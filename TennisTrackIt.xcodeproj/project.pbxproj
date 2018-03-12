@@ -63,6 +63,8 @@
 		D198FBD02052E2220075D44D /* SkillDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D198FBCE2052E2220075D44D /* SkillDataManager.swift */; };
 		D198FBD520568FDC0075D44D /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = D198FBD420568FDC0075D44D /* Array.swift */; };
 		D198FBD620568FDC0075D44D /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = D198FBD420568FDC0075D44D /* Array.swift */; };
+		D198FBDD205695D70075D44D /* CreateSkillVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D198FBDC205695D70075D44D /* CreateSkillVC.swift */; };
+		D198FBDE205695D70075D44D /* CreateSkillVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D198FBDC205695D70075D44D /* CreateSkillVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -101,6 +103,7 @@
 		D198FBCB2052DC6F0075D44D /* UINavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationBar.swift; sourceTree = "<group>"; };
 		D198FBCE2052E2220075D44D /* SkillDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillDataManager.swift; sourceTree = "<group>"; };
 		D198FBD420568FDC0075D44D /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
+		D198FBDC205695D70075D44D /* CreateSkillVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateSkillVC.swift; sourceTree = "<group>"; };
 		D81D9F9086275E8AEFFFC3A7 /* Pods_TennisTrackIt__Development_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TennisTrackIt__Development_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -250,6 +253,8 @@
 		D18BBFB120483DE900FCB60F /* Skills */ = {
 			isa = PBXGroup;
 			children = (
+				D198FBD7205695060075D44D /* SkillDetail */,
+				D198FBD82056950E0075D44D /* CreateSkill */,
 				D18BBFB52048421100FCB60F /* Skills.storyboard */,
 				D174B5DE20517BF6001BB767 /* SkillsTableVC.swift */,
 			);
@@ -283,6 +288,21 @@
 				D198FBCE2052E2220075D44D /* SkillDataManager.swift */,
 			);
 			path = DataManagers;
+			sourceTree = "<group>";
+		};
+		D198FBD7205695060075D44D /* SkillDetail */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SkillDetail;
+			sourceTree = "<group>";
+		};
+		D198FBD82056950E0075D44D /* CreateSkill */ = {
+			isa = PBXGroup;
+			children = (
+				D198FBDC205695D70075D44D /* CreateSkillVC.swift */,
+			);
+			path = CreateSkill;
 			sourceTree = "<group>";
 		};
 		F12CA0274E3087DE5C5F3577 /* Frameworks */ = {
@@ -544,6 +564,7 @@
 				D18BBFBF2048466C00FCB60F /* GoalsCollectionVC.swift in Sources */,
 				D18BBFCD204967A700FCB60F /* GoalDetailVC.swift in Sources */,
 				D1025AE6204997C0007D55D8 /* Drill.swift in Sources */,
+				D198FBDD205695D70075D44D /* CreateSkillVC.swift in Sources */,
 				D1025AE320499617007D55D8 /* Goal.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -570,6 +591,7 @@
 				D18BBFC02048466C00FCB60F /* GoalsCollectionVC.swift in Sources */,
 				D18BBFCE204967A700FCB60F /* GoalDetailVC.swift in Sources */,
 				D1025AE7204997C0007D55D8 /* Drill.swift in Sources */,
+				D198FBDE205695D70075D44D /* CreateSkillVC.swift in Sources */,
 				D1025AE420499617007D55D8 /* Goal.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

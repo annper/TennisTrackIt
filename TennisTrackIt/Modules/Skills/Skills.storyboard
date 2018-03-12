@@ -110,6 +110,7 @@
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="didTapCreateBarButtonItem:" destination="Ztn-dj-kON" id="GuG-i2-4az"/>
+                                <segue destination="Atc-mk-tLo" kind="presentation" identifier="CreateSkillSegue" id="9bR-Ow-iTj"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -121,6 +122,60 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h8R-Gt-01f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-239.19999999999999" y="330.58470764617692"/>
+        </scene>
+        <!--Add skill-->
+        <scene sceneID="yqI-Of-NO3">
+            <objects>
+                <viewController id="3au-C7-v1B" customClass="CreateSkillVC" customModule="TennisTrackIt__Development_" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WSd-dR-t6G">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="h7B-7R-UjK"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Add skill" id="lDL-f4-qJL">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Dfr-Ia-LP7">
+                            <color key="tintColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="didTapCancelBarButtonItem:" destination="3au-C7-v1B" id="d6R-tM-At3"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" systemItem="done" id="qxg-I9-BiE">
+                            <color key="tintColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="didTapDoneBarButtonItem:" destination="3au-C7-v1B" id="gq3-1f-99U"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="doneBarButtonItem" destination="qxg-I9-BiE" id="TDL-Hu-tJj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HfM-MN-d05" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="521" y="1075"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="9iC-ar-e7I">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Atc-mk-tLo" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="Ybm-mj-RVn">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="3au-C7-v1B" kind="relationship" relationship="rootViewController" id="Ute-iK-Yzg"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="E6U-tS-7bD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-239" y="1075"/>
         </scene>
     </scenes>
     <resources>
