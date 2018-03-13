@@ -32,11 +32,7 @@ class SkillsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
   // MARK: - IBActions
   
   @IBAction func didTapSettingBarButtonItem(_ sender: UIBarButtonItem) {
-    Logger.info("didTapSettingBarButtonItem")
-  }
-  
-  @IBAction func didTapCreateBarButtonItem(_ sender: UIBarButtonItem) {
-    Logger.info("didTapCreateBarButtonItem")
+    showSettingsActions()
   }
   
   // MARK: - UITableViewController
@@ -82,6 +78,40 @@ class SkillsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
     tableView.reloadData()
   }
   
+  private func showSettingsActions() {
+    
+    let alert = UIAlertController(title: "Settings", message: "Choose the action you wish to perform", preferredStyle: .actionSheet)
+    
+    // Delete
+    let delete = UIAlertAction(title: "Delete skills", style: .destructive) { (_) in
+      // TODO: - Enter delete mode a la spotify for multiple deletions
+      Logger.info("Open delete menu")
+    }
+    alert.addAction(delete)
+    
+    let order = UIAlertAction(title: "Set display order", style: .default) { (_) in
+      self.showOrderSettings()
+    }
+    alert.addAction(order)
+    
+    present(alert, animated: true, completion: nil)
+    
+  }
+  
+  private func showOrderSettings() {
+    
+    // TODO: - Enable setting of order + saving of order
+    
+    let alert = UIAlertController(title: "Order skills", message: "Set the order in which you wish the skills to be displayed", preferredStyle: .actionSheet)
+    
+    // alphabetical
+    let alphabetical = UIAlertAction(title: "Alphabetically", style: .default) { (_) in
+      Logger.info("Order alphabetically")
+    }
+    alert.addAction(alphabetical)
+    
+    present(alert, animated: true, completion: nil)
+  }
   
    // MARK: - Navigation
    

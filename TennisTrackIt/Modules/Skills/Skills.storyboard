@@ -117,7 +117,6 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="DFA-YF-9n7">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
-                                <action selector="didTapCreateBarButtonItem:" destination="Ztn-dj-kON" id="GuG-i2-4az"/>
                                 <segue destination="Atc-mk-tLo" kind="presentation" identifier="CreateSkillSegue" id="9bR-Ow-iTj"/>
                             </connections>
                         </barButtonItem>
