@@ -71,9 +71,12 @@ class SkillsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
     
     if isInDeleteMode {
       let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(stopEditing))
+      doneButton.tintColor = UIColor.black
+      doneButton.style = .done
       navigationItem.setRightBarButton(doneButton, animated: true)
     } else {
       let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(showCreateSkillVC))
+      addButton.tintColor = UIColor.black
       navigationItem.setRightBarButton(addButton, animated: true)
     }
   }
@@ -87,7 +90,6 @@ class SkillsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
     let sectionedSkills = savedSkills.getSectionedSkills()
     categories = sectionedSkills.sections
     allSkills = sectionedSkills.skills
-    
   }
   
   private func refreshTableView() {
@@ -101,12 +103,12 @@ class SkillsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
     
     // Delete
     let delete = UIAlertAction(title: "Delete skills", style: .destructive) { (_) in
-      // TODO: - Enter delete mode a la spotify for multiple deletions
       self.enterDeleteMode()
       Logger.info("Open delete menu")
     }
     alert.addAction(delete)
     
+    // Order skill
     let order = UIAlertAction(title: "Set display order", style: .default) { (_) in
       self.showOrderSettings()
     }
@@ -226,6 +228,19 @@ class SkillsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
   func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
     guard editingStyle == .delete else { return }
     
+    let currentSectionCount = categories.count
+    
+    skillDataManger.delete(allSkills[indexPath.section][indexPath.row])
+    loadSavedSkills()
+    
+    // Delete the section if the last skill from that category was deleted
+    // If there are more skills in that category, just delete the selected row
+    if categories.count < currentSectionCount {
+      tableView.deleteSections([indexPath.section], with: .fade)
+    } else {
+      tableView.deleteRows(at: [indexPath], with: .fade)
+    }
+
   }
   
   func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {
