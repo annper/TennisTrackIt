@@ -112,15 +112,17 @@ extension CreateSkillVC: UITextFieldDelegate {
   
   func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
     
-    var currentText = textField.text ?? ""
+    let currentText = (textField.text ?? "") as NSString
+    
+    let transformedString: String
     if string.isEmpty {
-      currentText = currentText.performBackspace()
+      transformedString = currentText.replacingCharacters(in: range, with: "")
     } else {
-      currentText = "\(currentText)\(string)"
+      transformedString = currentText.replacingCharacters(in: range, with: string)
     }
     
-    titleLabel.text = currentText
-    doneBarButtonItem.isEnabled = !currentText.isEmpty
+    titleLabel.text = transformedString
+    doneBarButtonItem.isEnabled = !transformedString.isEmpty
     
     return true
   }

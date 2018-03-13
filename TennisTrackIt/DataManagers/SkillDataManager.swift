@@ -109,10 +109,11 @@ class SkillDataManager: BaseDataManager, SkillInterface {
       if isNewSkill {
         // Set a unique id by finding the highest current id and increment by one
         id = (skillList.skills.map({ $0.id }).max() ?? 1) + 1
-        hasUniqueTitle = skillList.hasSkillWithSameTitle(asSkill: skill)
-        guard hasUniqueTitle else { return false }
       }
     }
+    
+    hasUniqueTitle = skillList.hasSkillWithSameTitle(asSkill: skill)
+    guard hasUniqueTitle else { return false }
     
     // Set new skill id or use the old one depending on if this is an update or not
     skill.id = isNewSkill ? id : skill.id

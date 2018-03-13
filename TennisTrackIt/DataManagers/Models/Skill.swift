@@ -31,7 +31,7 @@ class SkillList: Mappable {
   // MARK: - Public methods
   
   public func hasSkillWithSameTitle(asSkill skill: Skill) -> Bool {
-    let skillWithSameTitle = skills.filter({ $0.title == skill.title })
+    let skillWithSameTitle = skills.filter({ ($0.title == skill.title) && ($0.id != skill.id) })
     return skillWithSameTitle.count > 0
   }
   
