@@ -58,6 +58,8 @@ class SkillsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
     
+    refreshTableView()
+    
     Logger.info("Skills tab")
   }
   
@@ -75,10 +77,9 @@ class SkillsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
     
   }
   
-  func removeDuplictes(_  array: [String]) -> [String] {
-    return array.reduce([]) { (result, category) -> [String] in
-      return result.contains(category) ? result : result + [category]
-    }
+  private func refreshTableView() {
+    loadSavedSkills()
+    tableView.reloadData()
   }
   
   

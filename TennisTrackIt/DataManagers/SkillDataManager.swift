@@ -112,7 +112,7 @@ class SkillDataManager: BaseDataManager, SkillInterface {
       }
     }
     
-    hasUniqueTitle = skillList.hasSkillWithSameTitle(asSkill: skill)
+    hasUniqueTitle = !skillList.hasSkillWithSameTitle(asSkill: skill)
     guard hasUniqueTitle else { return false }
     
     // Set new skill id or use the old one depending on if this is an update or not
