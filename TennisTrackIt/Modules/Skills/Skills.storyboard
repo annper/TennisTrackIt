@@ -116,14 +116,12 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="DFA-YF-9n7">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                            <connections>
-                                <segue destination="Atc-mk-tLo" kind="presentation" identifier="CreateSkillSegue" id="9bR-Ow-iTj"/>
-                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="searchBar" destination="84r-g1-sGR" id="163-1R-nyK"/>
                         <outlet property="tableView" destination="Cvm-Fz-kqD" id="nZq-16-jKS"/>
+                        <segue destination="Atc-mk-tLo" kind="presentation" identifier="CreateSkillSegue" id="3Kj-FV-7AV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h8R-Gt-01f" userLabel="First Responder" sceneMemberID="firstResponder"/>

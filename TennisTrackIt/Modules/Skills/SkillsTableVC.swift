@@ -18,6 +18,10 @@ class SkillsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
   private var allSkills: [[Skill]] = [[]]
   private var searchActive: Bool = false
   private let skillDetailSegueIdentifier: String = "SkillDetailSegue"
+  private struct SegueIdentifier {
+    static let skillDetail: String = "SkillDetailSegue"
+    static let skillCreate: String = "CreateSkillSegue"
+  }
   
   // MARK: - IBOutlets
   
@@ -41,6 +45,7 @@ class SkillsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
     super.viewDidLoad()
     
     navigationController?.navigationBar.hideShadow()
+    configureRightBarButtonItem()
     
     loadSavedSkills()
   }
@@ -60,6 +65,18 @@ class SkillsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
   }
   
   // MARK: - Private methods
+  
+  private func configureRightBarButtonItem() {
+    let isInDeleteMode = tableView.isEditing
+    
+    if isInDeleteMode {
+      let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(stopEditing))
+      navigationItem.setRightBarButton(doneButton, animated: true)
+    } else {
+      let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(showCreateSkillVC))
+      navigationItem.setRightBarButton(addButton, animated: true)
+    }
+  }
   
   private func loadSavedSkills() {
     
@@ -85,6 +102,7 @@ class SkillsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
     // Delete
     let delete = UIAlertAction(title: "Delete skills", style: .destructive) { (_) in
       // TODO: - Enter delete mode a la spotify for multiple deletions
+      self.enterDeleteMode()
       Logger.info("Open delete menu")
     }
     alert.addAction(delete)
@@ -96,6 +114,22 @@ class SkillsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
     
     present(alert, animated: true, completion: nil)
     
+  }
+  
+  private func enterDeleteMode() {
+    tableView.setEditing(true, animated: true)
+    
+    configureRightBarButtonItem()
+  }
+  
+  @objc private func stopEditing() {
+    tableView.setEditing(false, animated: true)
+    
+    configureRightBarButtonItem()
+  }
+  
+  @objc private func showCreateSkillVC() {
+    performSegue(withIdentifier: SegueIdentifier.skillCreate, sender: self)
   }
   
   private func showOrderSettings() {
@@ -183,6 +217,19 @@ class SkillsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
   
   func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
     return categories[section]
+  }
+  
+  func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+    return true
+  }
+  
+  func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    guard editingStyle == .delete else { return }
+    
+  }
+  
+  func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {
+    return "Delete"
   }
   
 }
