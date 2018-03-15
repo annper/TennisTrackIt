@@ -50,6 +50,44 @@ class SkillList: Mappable {
     return SectionedSkills(sections: sections, skills: sectionedSkills)
   }
   
+  public func getFilteredSkills(searchText: String) -> SectionedSkills {
+    
+    let unfilteredSectionedSkills = getSectionedSkills()
+    
+    let filteredSkills = filterSkills(basedOn: searchText, unfilteredSkills: unfilteredSectionedSkills.skills)
+    
+    let filteredCategories = filterCategories(basedOnSkills: filteredSkills)
+
+    return SectionedSkills(sections: filteredCategories, skills: filteredSkills)
+  }
+  
+  // MARK - Private properties
+  
+  private func filterCategories(basedOnSkills skills: [[Skill]]) -> [String] {
+    
+    return skills.flatMap({ $0 }).map({ $0.category.rawValue }).removeDuplicates()
+  }
+  
+  private func filterSkills(basedOn searchText: String, unfilteredSkills: [[Skill]]) -> [[Skill]] {
+    
+    let searchText = searchText.lowercased()
+    
+    return unfilteredSkills.reduce([]) { (result, skillArray) -> [[Skill]] in
+      
+      let matchingSkillsArray = skillArray.filter({ (skill) -> Bool in
+        let nsString = skill.title.lowercased() as NSString
+        return nsString.contains(searchText)
+      })
+      
+      if matchingSkillsArray.isEmpty {
+        return result
+      } else {
+        return result + [matchingSkillsArray]
+      }
+    }
+    
+  }
+  
 }
 
 class Skill: Mappable {

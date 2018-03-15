@@ -16,7 +16,7 @@ class SkillsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
   private let cellReuseIdentifier: String = "SkillCell"
   private var categories: [String] = []
   private var allSkills: [[Skill]] = [[]]
-  private var searchActive: Bool = false
+  private var searchIsActive: Bool = false
   private let skillDetailSegueIdentifier: String = "SkillDetailSegue"
   private struct SegueIdentifier {
     static let skillDetail: String = "SkillDetailSegue"
@@ -94,7 +94,13 @@ class SkillsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
   }
   
   private func refreshTableView() {
-    loadSavedSkills()
+    
+    if searchIsActive {
+      filterTableView(basedOn: searchBar.text ?? "")
+    } else {
+      loadSavedSkills()
+    }
+    
     tableView.reloadData()
   }
   
@@ -254,33 +260,28 @@ extension SkillsVC: UISearchBarDelegate {
   
   func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
     
+    filterTableView(basedOn: searchText)
+    tableView.reloadData()
+
+  }
+  
+  private func filterTableView(basedOn searchText: String) {
+    
     guard !searchText.isBlank else {
+      searchIsActive = false
       refreshTableView()
       return
     }
     
-    loadSavedSkills()
+    searchIsActive = true
     
-    let filteredSkills = allSkills.reduce([]) { (result, skillArray) -> [[Skill]] in
-      
-      let matchingSkillsArray = skillArray.filter({ (skill) -> Bool in
-        let nsString = skill.title.lowercased() as NSString
-        return nsString.contains(searchText.lowercased())
-      })
-      
-      if !matchingSkillsArray.isEmpty {
-        return result + [matchingSkillsArray]
-      } else {
-        return result
-      }
+    guard let savedSkills = skillDataManger.savedSkills() else {
+      return
     }
     
-    allSkills = filteredSkills
-    
-    let filteredCategories = filteredSkills.flatMap({ $0 }).map({ $0.category.rawValue }).removeDuplicates()
-    categories = filteredCategories
-    
-    tableView.reloadData()
+    let filteredSkills = savedSkills.getFilteredSkills(searchText: searchText)
+    allSkills = filteredSkills.skills
+    categories = filteredSkills.sections
   }
   
 }
