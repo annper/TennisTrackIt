@@ -265,6 +265,10 @@ extension SkillsVC: UISearchBarDelegate {
 
   }
   
+  func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+    searchBar.resignFirstResponder()
+  }
+  
   private func filterTableView(basedOn searchText: String) {
     
     guard !searchText.isBlank else {

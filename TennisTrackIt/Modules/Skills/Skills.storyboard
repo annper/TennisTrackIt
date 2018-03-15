@@ -58,7 +58,7 @@
                                     <constraint firstAttribute="height" constant="60" id="ZXK-1G-jFt"/>
                                 </constraints>
                                 <color key="barTintColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="search"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="done"/>
                                 <connections>
                                     <outlet property="delegate" destination="Ztn-dj-kON" id="d6g-WM-OnV"/>
                                 </connections>
