@@ -94,13 +94,7 @@ class SkillsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
   }
   
   private func refreshTableView() {
-    
-    if searchIsActive {
-      filterTableView(basedOn: searchBar.text ?? "")
-    } else {
-      loadSavedSkills()
-    }
-    
+    searchIsActive ? filterTableView(basedOn: searchBar.text ?? "") : loadSavedSkills()
     tableView.reloadData()
   }
   

@@ -48,7 +48,7 @@ class GoalsCollectionViewCell: UICollectionViewCell {
   
   @IBAction func didTapRemoveButton(_ sender: UIButton) {
     Logger.info("Remove goal with id: \(goal.id)")
-    deleteGoal()
+    removeGoal(goal, indexPath)
   }
   
   // MARK: - UICollectionViewCell
@@ -73,10 +73,6 @@ class GoalsCollectionViewCell: UICollectionViewCell {
   }
   
   // MARK: - Private methods
-  
-  private func deleteGoal() {
-    removeGoal(goal, indexPath)
-  }
   
   private func setStatusIcon() {
     let imageName = goal.completed ? "completed" : "in-progress"

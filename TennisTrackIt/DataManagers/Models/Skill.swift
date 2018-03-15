@@ -30,38 +30,59 @@ class SkillList: Mappable {
   
   // MARK: - Public methods
   
+  /// Sees if a skill with the same title already exists among the currenlty saved skills.
+  /// - parameter skill: The skill being comopared
+  /// - returns: true if another skill with the same title already exists, otherwise false
   public func hasSkillWithSameTitle(asSkill skill: Skill) -> Bool {
     let skillWithSameTitle = skills.filter({ ($0.title == skill.title) && ($0.id != skill.id) })
     return skillWithSameTitle.count > 0
   }
   
+  /// Turn the array of currently saved skills into sectioned data that can be used with a sectioned table view. Also applies the set ordering (currently only alphabetically)
+  /// - returns: SectionedSkills - Includes skills divided into Cell row and Section data
   public func getSectionedSkills() -> SectionedSkills {
     
     let sections = skills.map({ $0.category.rawValue }).removeDuplicates()
     var sectionedSkills = Array(repeatElement([Skill](), count: sections.count))
-
-    let sortedSkills = skills.sorted { $0.category.rawValue < $1.category.rawValue }
     
-    sectionedSkills = sortedSkills.reduce(into: sectionedSkills) { (result, skill) in
+    sectionedSkills = skills.reduce(into: sectionedSkills) { (result, skill) in
       let index = Int(sections.index(of: skill.category.rawValue) ?? 0)
       result[index].append(skill)
     }
     
-    return SectionedSkills(sections: sections, skills: sectionedSkills)
+    return sortedSkills(SectionedSkills(sections: sections, skills: sectionedSkills))
   }
   
+  /// Filter skills based on the passed string
+  /// - parameter searchText: the String that must be included in a skills title for it to be included in the result
+  /// - returns: SectionedSkills - Filtered sections and skills
   public func getFilteredSkills(searchText: String) -> SectionedSkills {
     
     let unfilteredSectionedSkills = getSectionedSkills()
     
     let filteredSkills = filterSkills(basedOn: searchText, unfilteredSkills: unfilteredSectionedSkills.skills)
-    
     let filteredCategories = filterCategories(basedOnSkills: filteredSkills)
 
     return SectionedSkills(sections: filteredCategories, skills: filteredSkills)
   }
   
-  // MARK - Private properties
+  // MARK - Private methods
+  
+  /// Sort skills + sections in alphabetical order
+  /// - parameters: sectionedSkills
+  /// - returns: SectionedSkills - The sorted result
+  private func sortedSkills(_ sectionedSkills: SectionedSkills) -> SectionedSkills {
+    
+    let skills = sectionedSkills.skills
+    let sections = sectionedSkills.sections
+    
+    let innerSorted = skills.map({ $0.sorted( by: { $0.title < $1.title }) })
+    let outerSorted = innerSorted.sorted(by: { $0[0].category.rawValue < $1[0].category.rawValue })
+    
+    let sortedSections = sections.sorted(by: { $0 < $1 })
+    
+    return SectionedSkills(sections: sortedSections, skills: outerSorted)
+  }
   
   private func filterCategories(basedOnSkills skills: [[Skill]]) -> [String] {
     

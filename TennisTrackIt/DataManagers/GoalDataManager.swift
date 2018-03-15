@@ -28,6 +28,7 @@ class GoalDataManager: BaseDataManager, GoalInterface {
   }
   
   /// Get all saved goals
+  /// - returns: The GoalList that was saved last if it exists
   public func savedGoals() -> GoalList? {
     
     guard let json = readFile(atPath: filePath) else {
@@ -43,6 +44,7 @@ class GoalDataManager: BaseDataManager, GoalInterface {
   }
   
   /// Save new goal
+  /// - parameter goal: The goal being saved
   public func add(_ goal: Goal) {
     add(goal, updated: false)
   }
@@ -56,11 +58,13 @@ class GoalDataManager: BaseDataManager, GoalInterface {
   }
   
   /// Delete goal
+  /// - parameter goal: The goal being deleted
   public func delete(_ goal: Goal) {
     deleteGoal(withId: goal.id)
   }
   
   /// Delete goal with id
+  /// - parameter id: the id of the goal to be deleted
   public func deleteGoal(withId id: Int) {
     
     // Get all saved goals
@@ -79,6 +83,7 @@ class GoalDataManager: BaseDataManager, GoalInterface {
   }
   
   /// Save the goal list with a new SortType
+  /// - parameter sortType: The new SortType to be saved
   public func updateSortSetting(to sortType: SortType) {
     guard let goalList = savedGoals() else {
       Logger.warn("There are currently no saved goals")

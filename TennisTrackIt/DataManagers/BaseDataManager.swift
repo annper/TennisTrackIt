@@ -9,7 +9,6 @@
 import Foundation
 import SwiftyJSON
 
-
 class BaseDataManager {
   
   // MARK: - Internal properties
