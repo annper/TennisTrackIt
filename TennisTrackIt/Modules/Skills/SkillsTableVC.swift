@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SkillsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
+class SkillsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
   
   // MARK: - Private properties
   
@@ -30,6 +30,7 @@ class SkillsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
   }}
   
   @IBOutlet var searchBar: UISearchBar! { didSet {
+    searchBar.delegate = self
     searchBar.layer.shadowOpacity = 0
   }}
   
@@ -174,8 +175,6 @@ class SkillsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
     
   }
   
-  // MARK: - UISearchBarDelegate - TODO
-  
   // MARK: - TableViewDataSource
   
   func numberOfSections(in tableView: UITableView) -> Int {
@@ -245,6 +244,43 @@ class SkillsVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UI
   
   func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {
     return "Delete"
+  }
+  
+}
+
+// MARK: - UISearchBarDelegate
+
+extension SkillsVC: UISearchBarDelegate {
+  
+  func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+    
+    guard !searchText.isBlank else {
+      refreshTableView()
+      return
+    }
+    
+    loadSavedSkills()
+    
+    let filteredSkills = allSkills.reduce([]) { (result, skillArray) -> [[Skill]] in
+      
+      let matchingSkillsArray = skillArray.filter({ (skill) -> Bool in
+        let nsString = skill.title.lowercased() as NSString
+        return nsString.contains(searchText.lowercased())
+      })
+      
+      if !matchingSkillsArray.isEmpty {
+        return result + [matchingSkillsArray]
+      } else {
+        return result
+      }
+    }
+    
+    allSkills = filteredSkills
+    
+    let filteredCategories = filteredSkills.flatMap({ $0 }).map({ $0.category.rawValue }).removeDuplicates()
+    categories = filteredCategories
+    
+    tableView.reloadData()
   }
   
 }
