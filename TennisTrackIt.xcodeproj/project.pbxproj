@@ -35,6 +35,8 @@
 		D179590B205FEA9F00251D7D /* DrillsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1795909205FEA9F00251D7D /* DrillsVC.swift */; };
 		D179590D205FF93D00251D7D /* DrillDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D179590C205FF93D00251D7D /* DrillDataManager.swift */; };
 		D179590E205FF93D00251D7D /* DrillDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D179590C205FF93D00251D7D /* DrillDataManager.swift */; };
+		D1795911206001A500251D7D /* CreateDrillVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1795910206001A500251D7D /* CreateDrillVC.swift */; };
+		D1795912206001A500251D7D /* CreateDrillVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1795910206001A500251D7D /* CreateDrillVC.swift */; };
 		D18BBF8E20482CD800FCB60F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18BBF8D20482CD800FCB60F /* AppDelegate.swift */; };
 		D18BBF9320482CD800FCB60F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D18BBF9120482CD800FCB60F /* Main.storyboard */; };
 		D18BBF9520482CD800FCB60F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D18BBF9420482CD800FCB60F /* Assets.xcassets */; };
@@ -92,6 +94,7 @@
 		D174B5DE20517BF6001BB767 /* SkillsTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillsTableVC.swift; sourceTree = "<group>"; };
 		D1795909205FEA9F00251D7D /* DrillsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrillsVC.swift; sourceTree = "<group>"; };
 		D179590C205FF93D00251D7D /* DrillDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrillDataManager.swift; sourceTree = "<group>"; };
+		D1795910206001A500251D7D /* CreateDrillVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateDrillVC.swift; sourceTree = "<group>"; };
 		D18BBF8A20482CD800FCB60F /* TennisTrackIt [Development].app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TennisTrackIt [Development].app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D18BBF8D20482CD800FCB60F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D18BBF9220482CD800FCB60F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -185,6 +188,14 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		D179590F2060019300251D7D /* CreateDrill */ = {
+			isa = PBXGroup;
+			children = (
+				D1795910206001A500251D7D /* CreateDrillVC.swift */,
+			);
+			path = CreateDrill;
+			sourceTree = "<group>";
+		};
 		D18BBF8120482CD800FCB60F = {
 			isa = PBXGroup;
 			children = (
@@ -233,6 +244,7 @@
 		D18BBFAE20483DE900FCB60F /* Drills */ = {
 			isa = PBXGroup;
 			children = (
+				D179590F2060019300251D7D /* CreateDrill */,
 				D18BBFB8204842C700FCB60F /* Drills.storyboard */,
 				D1795909205FEA9F00251D7D /* DrillsVC.swift */,
 			);
@@ -576,6 +588,7 @@
 				D174B5DC20503D13001BB767 /* CustomTextView.swift in Sources */,
 				D1025AE9204997EB007D55D8 /* Skill.swift in Sources */,
 				D18BBFBF2048466C00FCB60F /* GoalsCollectionVC.swift in Sources */,
+				D1795911206001A500251D7D /* CreateDrillVC.swift in Sources */,
 				D198FBE02056CEF30075D44D /* SkillDetailVC.swift in Sources */,
 				D18BBFCD204967A700FCB60F /* GoalDetailVC.swift in Sources */,
 				D1025AE6204997C0007D55D8 /* Drill.swift in Sources */,
@@ -606,6 +619,7 @@
 				D174B5DD20503D13001BB767 /* CustomTextView.swift in Sources */,
 				D1025AEA204997EB007D55D8 /* Skill.swift in Sources */,
 				D18BBFC02048466C00FCB60F /* GoalsCollectionVC.swift in Sources */,
+				D1795912206001A500251D7D /* CreateDrillVC.swift in Sources */,
 				D198FBE12056CEF30075D44D /* SkillDetailVC.swift in Sources */,
 				D18BBFCE204967A700FCB60F /* GoalDetailVC.swift in Sources */,
 				D1025AE7204997C0007D55D8 /* Drill.swift in Sources */,

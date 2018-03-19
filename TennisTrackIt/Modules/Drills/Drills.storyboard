@@ -83,6 +83,9 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="ELd-Js-dlZ">
                             <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <segue destination="Zmz-9f-NRs" kind="presentation" identifier="CreateDrillSegue" id="XpD-Ow-HIp"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -93,6 +96,52 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9LQ-kt-JEA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="426" y="98"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="WGu-bS-u5z">
+            <objects>
+                <navigationController id="Zmz-9f-NRs" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="iqY-oF-HAQ">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="1" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="h6G-jv-Pwp" kind="relationship" relationship="rootViewController" id="zbD-Am-V4K"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zo6-8Z-DFR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="425" y="809"/>
+        </scene>
+        <!--Create skill-->
+        <scene sceneID="RuD-Sq-bm1">
+            <objects>
+                <viewController id="h6G-jv-Pwp" customClass="CreateDrillVC" customModule="TennisTrackIt__Development_" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Tbg-Ip-CxK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="hvZ-1d-fQT"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Create skill" id="Bzh-Da-0qK">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="mvi-kU-dg4">
+                            <color key="tintColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="didTapCancelBarButtonItem:" destination="h6G-jv-Pwp" id="qIu-IK-A50"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="bub-gj-ODG">
+                            <color key="tintColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iX5-bK-Lym" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1156" y="808"/>
         </scene>
     </scenes>
     <resources>
