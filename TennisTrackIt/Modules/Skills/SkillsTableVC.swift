@@ -17,6 +17,7 @@ class SkillsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
   private var categories: [String] = []
   private var allSkills: [[Skill]] = [[]]
   private var searchIsActive: Bool = false
+  private var activeSortType: SortType = .alphabetic
   private let skillDetailSegueIdentifier: String = "SkillDetailSegue"
   private struct SegueIdentifier {
     static let skillDetail: String = "SkillDetailSegue"
@@ -88,9 +89,10 @@ class SkillsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
       return
     }
     
-    let sectionedSkills = savedSkills.sorted() //savedSkills.getSectionedSkills()
+    let sectionedSkills = savedSkills.sorted()
     categories = sectionedSkills.sections
     allSkills = sectionedSkills.skills
+    activeSortType = savedSkills.sortType
   }
   
   private func refreshTableView() {
@@ -105,7 +107,6 @@ class SkillsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     // Delete
     let delete = UIAlertAction(title: "Delete skills", style: .destructive) { (_) in
       self.enterDeleteMode()
-      Logger.info("Open delete menu")
     }
     alert.addAction(delete)
     
@@ -142,17 +143,29 @@ class SkillsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     let alert = UIAlertController(title: "Order skills", message: "Set the order in which you wish the skills to be displayed", preferredStyle: .actionSheet)
     
     // alphabetical
-    let alphabetical = UIAlertAction(title: "Alphabetically", style: .default) { (_) in
+    let alphabetical = UIAlertAction(title: activeSortType.sortDescriptor(.alphabetic), style: .default) { (_) in
       Logger.info("Order alphabetically")
+      self.updateSortSetting(to: .alphabetic)
     }
     alert.addAction(alphabetical)
+    
+    // Reverse alphabetical
+    let reverseAlphabetical = UIAlertAction(title: activeSortType.sortDescriptor(.reverseAlphabetic), style: .default) { (_) in
+      self.updateSortSetting(to: .reverseAlphabetic)
+    }
+    alert.addAction(reverseAlphabetical)
     
     present(alert, animated: true, completion: nil)
   }
   
-   // MARK: - Navigation
-   
-   // In a storyboard-based application, you will often want to do a little preparation before navigation
+  private func updateSortSetting(to sortType: SortType) {
+    skillDataManger.updateSortSetting(to: sortType)
+    refreshTableView()
+  }
+  
+ // MARK: - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     
     let segueIdentifier = segue.identifier ?? ""
