@@ -116,6 +116,10 @@ class SkillsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     alert.addAction(order)
     
+    // Cancel
+    let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+    alert.addAction(cancel)
+    
     present(alert, animated: true, completion: nil)
     
   }
@@ -137,9 +141,7 @@ class SkillsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
   }
   
   private func showOrderSettings() {
-    
-    // TODO: - Enable setting of order + saving of order
-    
+        
     let alert = UIAlertController(title: "Order skills", message: "Set the order in which you wish the skills to be displayed", preferredStyle: .actionSheet)
     
     // alphabetical
@@ -253,10 +255,6 @@ class SkillsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
       tableView.deleteRows(at: [indexPath], with: .fade)
     }
 
-  }
-  
-  func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {
-    return "Delete"
   }
   
 }
