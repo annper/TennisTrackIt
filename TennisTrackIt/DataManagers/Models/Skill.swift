@@ -11,6 +11,7 @@ import ObjectMapper
 
 class SkillList: Mappable {
   
+  public var sortType: SortType = .alphabetic
   public var skills: [Skill] = []
   
   public struct SectionedSkills {
@@ -26,6 +27,7 @@ class SkillList: Mappable {
   
   public func mapping(map: Map) {
     skills <- map["skills"]
+    sortType <- (map["sortType"], EnumTransform<SortType>())
   }
   
   // MARK: - Public methods
@@ -38,7 +40,7 @@ class SkillList: Mappable {
     return skillWithSameTitle.count > 0
   }
   
-  /// Turn the array of currently saved skills into sectioned data that can be used with a sectioned table view. Also applies the set ordering (currently only alphabetically)
+  /// Turn the array of currently saved skills into sectioned data that can be used with a sectioned table view.
   /// - returns: SectionedSkills - Includes skills divided into Cell row and Section data
   public func getSectionedSkills() -> SectionedSkills {
     
@@ -50,7 +52,7 @@ class SkillList: Mappable {
       result[index].append(skill)
     }
     
-    return sortedSkills(SectionedSkills(sections: sections, skills: sectionedSkills))
+    return SectionedSkills(sections: sections, skills: sectionedSkills)
   }
   
   /// Filter skills based on the passed string
@@ -66,20 +68,47 @@ class SkillList: Mappable {
     return SectionedSkills(sections: filteredCategories, skills: filteredSkills)
   }
   
+  /// Sorts the skills data according to the currently set SortType
+  /// - returns: SectionedSkills sorted according to the current GoalList sortType
+  public func sorted() -> SectionedSkills {
+    
+    let sectionedSkills = getSectionedSkills()
+    let skills = sectionedSkills.skills
+    let sections = sectionedSkills.sections
+    
+    switch sortType {
+    case .alphabetic:
+      return sortAlphabetically(skills: skills, sections: sections)
+    case .reverseAlphabetic:
+      return sortReverseAlphabetically(skills: skills, sections: sections)
+    default:
+      return sectionedSkills
+    }
+    
+  }
+  
   // MARK - Private methods
   
   /// Sort skills + sections in alphabetical order
   /// - parameters: sectionedSkills
   /// - returns: SectionedSkills - The sorted result
-  private func sortedSkills(_ sectionedSkills: SectionedSkills) -> SectionedSkills {
-    
-    let skills = sectionedSkills.skills
-    let sections = sectionedSkills.sections
-    
+  private func sortAlphabetically(skills: [[Skill]], sections: [String]) -> SectionedSkills {
     let innerSorted = skills.map({ $0.sorted( by: { $0.title < $1.title }) })
     let outerSorted = innerSorted.sorted(by: { $0[0].category.rawValue < $1[0].category.rawValue })
     
     let sortedSections = sections.sorted(by: { $0 < $1 })
+    
+    return SectionedSkills(sections: sortedSections, skills: outerSorted)
+  }
+  
+  /// Sort skills + sections in  reverse alphabetical order
+  /// - parameters: sectionedSkills
+  /// - returns: SectionedSkills - The sorted result
+  private func sortReverseAlphabetically(skills: [[Skill]], sections: [String]) -> SectionedSkills {
+    let innerSorted = skills.map({ $0.sorted(by: { $0.title > $1.title }) })
+    let outerSorted = innerSorted.sorted(by: { $0[0].category.rawValue > $1[0].category.rawValue })
+    
+    let sortedSections = sections.sorted(by: { $0 > $1 })
     
     return SectionedSkills(sections: sortedSections, skills: outerSorted)
   }

@@ -15,7 +15,7 @@ class GoalList: Mappable {
   
   public var sortType: SortType = .createdDate
   public var goals: [Goal] = []
-
+  
   // MARK: - Mappable
   
   public required convenience init?(map: Map) {
@@ -30,9 +30,9 @@ class GoalList: Mappable {
   // MARK: - Public methods
   
   func findGoal(withId id: Int) -> Goal? {
-    return goals.filter({ id == $0.id }).first
+    return goals.filter({ id == $0.id }).first    
   }
-  
+
   func sortedGoals() -> [Goal] {
     switch sortType {
     case .alphabetic:
@@ -41,12 +41,14 @@ class GoalList: Mappable {
       return goals.sorted { $0.id > $1.id }
     case .completionStatus:
       return sortByStatusAndTitle()
+    default:
+      return goals
     }
   }
-  
+
   /// Primary sorting based on goal completion status (with in-progress goals first), secondary sorting based on title
   private func sortByStatusAndTitle()  -> [Goal] {
-    
+
     return goals.sorted { (one, two) -> Bool in
       if one.completed != two.completed {
         return !one.completed
@@ -54,7 +56,7 @@ class GoalList: Mappable {
         return one.title < two.title
       }
     }
-    
+
   }
 
 }
@@ -63,6 +65,7 @@ class GoalList: Mappable {
 
 enum SortType: String {
   case alphabetic = "alphabetic"
+  case reverseAlphabetic = "reverseAlphabetic"
   case createdDate = "createdDate"
   case completionStatus = "completionStatus"
   
@@ -73,6 +76,8 @@ enum SortType: String {
     switch type {
     case .alphabetic:
       title = "Alphabetically"
+    case .reverseAlphabetic:
+      title = "Reverse alphabetically"
     case .createdDate:
       title = "Creation date"
     case .completionStatus:

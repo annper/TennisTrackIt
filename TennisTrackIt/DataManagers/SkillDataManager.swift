@@ -16,6 +16,7 @@ protocol SkillInterface {
   func update(_ skill: Skill) -> Bool
   func delete(_ skill: Skill)
   func deleteSkill(withId id: Int)
+  func updateSortSetting(to sortType: SortType)
 }
 
 class SkillDataManager: BaseDataManager, SkillInterface {
@@ -82,7 +83,7 @@ class SkillDataManager: BaseDataManager, SkillInterface {
 
     // Get all saved skills
     guard let savedList = savedSkills() else {
-      Logger.warn("There are currently no saved goals")
+      Logger.warn("There are currently no saved skills")
       return
     }
 
@@ -92,6 +93,19 @@ class SkillDataManager: BaseDataManager, SkillInterface {
 
     // Re-save the list
     saveSkillList(savedList)
+  }
+  
+  /// Update and save the current sort setting for skills
+  /// - parameter sortType: should only be alphabetical or reverseAlphabetical
+  public func updateSortSetting(to sortType: SortType) {
+    
+    guard let skillList = savedSkills() else {
+      Logger.warn("There are currently no saved skills")
+      return
+    }
+    
+    skillList.sortType = sortType
+    saveSkillList(skillList)
   }
   
   // MARK: - Private methods

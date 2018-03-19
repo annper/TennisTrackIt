@@ -88,7 +88,7 @@ class SkillsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
       return
     }
     
-    let sectionedSkills = savedSkills.getSectionedSkills()
+    let sectionedSkills = savedSkills.sorted() //savedSkills.getSectionedSkills()
     categories = sectionedSkills.sections
     allSkills = sectionedSkills.skills
   }
