@@ -161,6 +161,13 @@
                                     <constraint firstItem="qMk-yp-104" firstAttribute="leading" secondItem="pbp-Y7-ak0" secondAttribute="leading" constant="20" id="tWA-pT-HtL"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xxh-HN-v2B">
+                                <rect key="frame" x="0.0" y="50" width="375" height="2"/>
+                                <color key="backgroundColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="2" id="SHX-IC-cep"/>
+                                </constraints>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1gl-Nn-qGX">
                                 <rect key="frame" x="0.0" y="52" width="375" height="150"/>
                                 <subviews>
@@ -186,13 +193,6 @@
                                     <constraint firstAttribute="trailing" secondItem="Qn8-m9-HXo" secondAttribute="trailing" id="l1z-Cd-HI4"/>
                                     <constraint firstItem="Tib-Vq-IPP" firstAttribute="leading" secondItem="1gl-Nn-qGX" secondAttribute="leading" id="lgT-40-zM6"/>
                                     <constraint firstItem="Tib-Vq-IPP" firstAttribute="top" secondItem="Qn8-m9-HXo" secondAttribute="bottom" id="rgH-si-PNj"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xxh-HN-v2B">
-                                <rect key="frame" x="0.0" y="50" width="375" height="2"/>
-                                <color key="backgroundColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="2" id="SHX-IC-cep"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zbO-N5-DsP">
@@ -251,8 +251,17 @@
                         <viewLayoutGuide key="safeArea" id="J2t-ZO-Q2w"/>
                     </view>
                     <navigationItem key="navigationItem" title="Skill title" id="8El-5O-v09">
-                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="aFs-mL-5yk"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="aFs-mL-5yk">
+                            <connections>
+                                <action selector="didTapEditBarButtonItem:" destination="2P6-W0-f5p" id="okC-2f-U8A"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="categoryLabel" destination="6iJ-4q-mKp" id="Ke5-IB-KXU"/>
+                        <outlet property="pickerView" destination="Qn8-m9-HXo" id="OOm-f4-7Mg"/>
+                        <outlet property="selectCategoryViewHeightConstraint" destination="DCv-Vk-2L7" id="nNj-Bp-M5T"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m1g-FQ-0JQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
