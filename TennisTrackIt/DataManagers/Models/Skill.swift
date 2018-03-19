@@ -11,12 +11,14 @@ import ObjectMapper
 
 class SkillList: Mappable {
   
+  typealias Section = String
+  typealias SkillSection = [Skill]
   public var sortType: SortType = .alphabetic
   public var skills: [Skill] = []
   
   public struct SectionedSkills {
-    var sections: [String]
-    var skills: [[Skill]]
+    var sections: [Section]
+    var skills: [SkillSection]
   }
   
   // MARK: - Mappable
@@ -92,7 +94,7 @@ class SkillList: Mappable {
   /// Sort skills + sections in alphabetical order
   /// - parameters: sectionedSkills
   /// - returns: SectionedSkills - The sorted result
-  private func sortAlphabetically(skills: [[Skill]], sections: [String]) -> SectionedSkills {
+  private func sortAlphabetically(skills: [SkillSection], sections: [Section]) -> SectionedSkills {
     let innerSorted = skills.map({ $0.sorted( by: { $0.title < $1.title }) })
     let outerSorted = innerSorted.sorted(by: { $0[0].category.rawValue < $1[0].category.rawValue })
     
@@ -104,7 +106,7 @@ class SkillList: Mappable {
   /// Sort skills + sections in  reverse alphabetical order
   /// - parameters: sectionedSkills
   /// - returns: SectionedSkills - The sorted result
-  private func sortReverseAlphabetically(skills: [[Skill]], sections: [String]) -> SectionedSkills {
+  private func sortReverseAlphabetically(skills: [SkillSection], sections: [Section]) -> SectionedSkills {
     let innerSorted = skills.map({ $0.sorted(by: { $0.title > $1.title }) })
     let outerSorted = innerSorted.sorted(by: { $0[0].category.rawValue > $1[0].category.rawValue })
     
@@ -113,16 +115,16 @@ class SkillList: Mappable {
     return SectionedSkills(sections: sortedSections, skills: outerSorted)
   }
   
-  private func filterCategories(basedOnSkills skills: [[Skill]]) -> [String] {
+  private func filterCategories(basedOnSkills skills: [SkillSection]) -> [Section] {
     
     return skills.flatMap({ $0 }).map({ $0.category.rawValue }).removeDuplicates()
   }
   
-  private func filterSkills(basedOn searchText: String, unfilteredSkills: [[Skill]]) -> [[Skill]] {
+  private func filterSkills(basedOn searchText: String, unfilteredSkills: [SkillSection]) -> [SkillSection] {
     
     let searchText = searchText.lowercased()
     
-    return unfilteredSkills.reduce([]) { (result, skillArray) -> [[Skill]] in
+    return unfilteredSkills.reduce([]) { (result, skillArray) -> [SkillSection] in
       
       let matchingSkillsArray = skillArray.filter({ (skill) -> Bool in
         let nsString = skill.title.lowercased() as NSString

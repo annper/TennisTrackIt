@@ -10,9 +10,16 @@ import UIKit
 
 class DrillsVC: UIViewController {
   
+  typealias SectionTitle = String
+  typealias DrillSection = [Drill]
+  
   // MARK: - Private properties
+  
+  private let drillDataManager = DrillDataManager()
   private var cellReuseidentifier: String = "DrillCell"
-  var activeSortType: SortType = .alphabetic
+  private var activeGroupSetting: GroupSetting = .title
+  private var sections: [SectionTitle] = []
+  private var drills: [DrillSection] = []
   
   // MARK: - IBOutlets
   
@@ -29,6 +36,7 @@ class DrillsVC: UIViewController {
   // MARK: - IBActions
   
   @IBAction func didTapSettingsBarButtonItem(_ sender: UIBarButtonItem) {
+    showSettingsAlert()
   }
   
   // MARK: - UIViewController
@@ -53,6 +61,16 @@ class DrillsVC: UIViewController {
   
   // MARK: - Private methods
   
+  private func loadSavedDrills() {
+    
+    guard let savedDrills = drillDataManager.savedDrills() else {
+      return
+    }
+    
+    (drills, sections) = savedDrills.grouped()
+    activeGroupSetting = savedDrills.groupBy
+  }
+  
   private func showSettingsAlert() {
     
     let alert = UIAlertController(title: "Settings", message: "Choose the action you wish to perform", preferredStyle: .actionSheet)
@@ -64,8 +82,8 @@ class DrillsVC: UIViewController {
     alert.addAction(delete)
     
     // Ordering
-    let ordering = UIAlertAction(title: "Set display order", style: .default) { (_) in
-      self.showOrderSettings()
+    let ordering = UIAlertAction(title: "Set how to group drills", style: .default) { (_) in
+      self.showGroupBySettings()
     }
     alert.addAction(ordering)
     
@@ -73,15 +91,15 @@ class DrillsVC: UIViewController {
     
   }
   
-  private func showOrderSettings() {
+  private func showGroupBySettings() {
     
-    let alert = UIAlertController(title: "Order drills", message: "Set the order in which you wish the skills to be displayed", preferredStyle: .actionSheet)
+    let alert = UIAlertController(title: "Group drills", message: "Set the way in which you wish the drills to be group by", preferredStyle: .actionSheet)
     
-    // alphabetically
-    let alphabetic = UIAlertAction(title: activeSortType.sortDescriptor(.alphabetic), style: .default) { (_) in
-      Logger.info("Sort alphabetically")
+    // By title
+    let byTitle = UIAlertAction(title: "Title", style: .default) { (_) in
+      Logger.info("Group by title")
     }
-    alert.addAction(alphabetic)
+    alert.addAction(byTitle)
     
     present(alert, animated: true, completion: nil)
   }
@@ -92,11 +110,11 @@ extension DrillsVC: UITableViewDelegate, UITableViewDataSource {
   // MARK: - UITableViewDataSource
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return 3
+    return drills[section].count
   }
   
   func numberOfSections(in tableView: UITableView) -> Int {
-    return 1
+    return sections.count
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -107,7 +125,7 @@ extension DrillsVC: UITableViewDelegate, UITableViewDataSource {
   }
   
   func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-    return "Header"
+    return sections[section]
   }
   
   func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

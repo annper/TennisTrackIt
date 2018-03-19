@@ -9,6 +9,39 @@
 import Foundation
 import ObjectMapper
 
+class DrillList: Mappable {
+  
+  public var groupBy: GroupSetting = .title
+  public var drills: [Drill] = []
+  
+  // MARK: - Mappable
+  
+  public required convenience init?(map: Map) {
+    self.init()
+  }
+  
+  public func mapping(map: Map) {
+    groupBy <- (map["groupBy"], EnumTransform<GroupSetting>())
+    drills <- map["drills"]
+  }
+  
+  // MARK: - Public mathods
+  
+  public func grouped() -> ([[Drill]], [String]) {
+    
+    // TODO: - Implement grouping methods
+    
+    switch groupBy {
+    case .title:
+      return ([drills], ["Section title"])
+    default:
+      return ([drills], ["Section titile"])
+    }
+    
+  }
+  
+}
+
 class Drill: Mappable {
   
   public var id: Int = 0
@@ -28,4 +61,9 @@ class Drill: Mappable {
     tags <- map["tags"]
     description <- map["description"]
   }
+}
+
+enum GroupSetting: String {
+  case title = "Title"
+  case skill = "Skill"
 }

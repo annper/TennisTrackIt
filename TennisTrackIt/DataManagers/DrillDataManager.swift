@@ -11,7 +11,7 @@ import ObjectMapper
 import SwiftyJSON
 
 protocol DrillInterface {
-//  func savedGoals() -> ?
+  func savedDrills() -> DrillList?
   func add(_ drill: Drill)
   func update(_ drill: Drill)
   func delete(_ drill: Drill)
@@ -28,6 +28,11 @@ class DrillDataManager: BaseDataManager, DrillInterface {
   }
   
   // MARK: - Public methods
+  
+  func savedDrills() -> DrillList? {
+    Logger.info("load saved drills")
+    return nil
+  }
   
   public func add(_ drill: Drill) {
     Logger.info("Add drill")
@@ -49,7 +54,7 @@ class DrillDataManager: BaseDataManager, DrillInterface {
     Logger.info("update sort setting")
   }
   
-  
+  // MARK: - Private methods
   
   
 }
